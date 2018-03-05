@@ -1,0 +1,20 @@
+<ion-header>
+    <ion-navbar color="facebook">
+        <ion-title>Pemandu Pelancong</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="bg">
+       <ion-card *ngIf="property[0]">
+        <!-- <img src="{{property[0].pers_tg_id}}"/> -->
+        <ion-card-content >
+        <h2 class="card-title" style="color: white;font-weight:bold;">Nama Persatuan</h2>
+            <h2 class="card-title" style="color: white;font-weight: lighter;">{{property[0].pers_tg_name}}</h2>
+            <h2 class="card-title" style="color: white;font-weight:bold;">Alamat</h2>
+            <p  style="color: white;font-weight: lighter;">{{property[0].pers_tg_address}}</p>
+            
+            <button ion-button *ngIf="property[0].pers_tg_address" (click)="openMap(users[0])">Show Location</button>
+            
+        </ion-card-content>
+    </ion-card>
+</ion-content>

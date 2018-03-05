@@ -1,0 +1,81 @@
+<ion-header>
+    <ion-navbar color="facebook">
+        <ion-title>Agensi Pelancongan</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="bg">
+       <ion-card *ngIf="property[0];else other_content1">
+        <!-- <img src="{{property[0].pers_tg_id}}"/> -->
+        <ion-card-content>
+            <h2 class="card-title" style="color: white;font-weight: strong;">{{property[0].appl_company_name}}</h2>
+            <p style="color: white;font-weight: lighter;">{{property[0].appl_company_address}}</p>
+            <p style="color: white;font-weight: lighter;">No Lesen:{{property[0].tobtab_no_lesen}}</p>
+            <p style="color: white;font-weight: lighter;">{{property[0].appl_company_phone}}</p>
+            <p style="color: white;font-weight: lighter;">Tarikh Tamat Lesen: {{property[0].tobtab_tkh_lesen_tamat}}</p>
+            <!-- <button ion-button *ngIf="users?.length>0"  (click)="openMap(users[0],property[0].appl_company_name)">Show Location</button> -->
+            <div *ngFor="let user of users">
+            <!-- <p style="color: white;font-weight: lighter;" >{{user.geometry.location.lat}}</p> -->
+            <button ion-button *ngIf="user.geometry.location.lat==4.210484;else other_content"   (click)="openMap(name[0],property[0].appl_company_name)">Show Location</button>
+            <ng-template #other_content><button ion-button    (click)="openMap(user,property[0].appl_company_name)">Show Location</button></ng-template>
+            </div>
+            
+            
+
+        </ion-card-content>
+   <!--      <ion-list>
+
+            <ion-item>
+                <ion-icon item-left name="moon"></ion-icon>
+                <h3>Bedrooms</h3>
+                <ion-note item-right>{{property.bedrooms}}</ion-note>
+            </ion-item>
+            <ion-item>
+                <ion-icon item-left name="leaf"></ion-icon>
+                <h3>Bathrooms</h3>
+                <ion-note item-right>{{property.bathrooms}}</ion-note>
+            </ion-item>
+            <ion-item>
+                <ion-icon item-left name="pricetag"></ion-icon>
+                <h3>Asking Price</h3>
+                <ion-note item-right>{{property.price}}</ion-note>
+            </ion-item>
+            <button ion-item (click)="openBrokerDetail(property.broker)">
+                <ion-avatar item-left>
+                    <img src="{{property.broker.picture}}"/>
+                </ion-avatar>
+                <h2>{{property.broker.name}}</h2>
+                <p>{{property.broker.title}}</p>
+            </button>
+        </ion-list> -->
+
+    
+
+    </ion-card>
+    <ion-card *ngIf="branchs">
+        <h2 class="card-title" style="color: white;font-weight: strong;text-align: center;">Cawangan</h2>
+            <div *ngFor="let branch of branchs">
+                <h2 class="card-title" style="color: white;font-weight: strong;">{{branch.sta_name}}</h2>
+                <div></div>
+                <p style="color: white;font-weight: lighter;">{{branch.branch_address}}</p>
+                <p style="color: white;font-weight: lighter;">Tel: {{branch.branch_phone}}</p>
+                <p style="color: white;font-weight: lighter;">Faks: {{branch.branch_fax}}</p>
+            </div >
+    </ion-card>
+    <ng-template #other_content1><ion-card>
+        <!-- <img src="{{property[0].pers_tg_id}}"/> -->
+        <ion-card-content>
+            <h2 class="card-title" style="color: white;font-weight: strong;">{{property.appl_company_name}}</h2>
+            <p style="color: white;font-weight: lighter;">{{property.appl_company_address}}</p>
+            <p style="color: white;font-weight: lighter;">No Lesen:{{property.tobtab_no_lesen}}</p>
+            <p style="color: white;font-weight: lighter;">{{property.appl_company_phone}}</p>
+            <!-- <button ion-button *ngIf="users?.length>0"  (click)="openMap(users[0],property[0].appl_company_name)">Show Location</button> -->
+            <div *ngFor="let user of users">
+            <!-- <p style="color: white;font-weight: lighter;" >{{user.geometry.location.lat}}</p> -->
+            <button ion-button *ngIf="user.geometry.location.lat==4.210484;else other_content"   (click)="openMap(name[0],property[0].appl_company_name)">Show Location</button>
+            <ng-template #other_content><button ion-button    (click)="openMap(user,property.appl_company_name)">Show Location</button></ng-template>
+            </div>
+        </ion-card-content>
+        </ion-card>
+        </ng-template>
+</ion-content>

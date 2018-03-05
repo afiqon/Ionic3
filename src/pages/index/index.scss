@@ -1,0 +1,21 @@
+page-index {
+.bg{
+		background-image: url('../assets/bg2.jpg');
+		background-size: cover;
+	}
+.box{
+display:table-cell;
+	vertical-align:middle;
+	text-align:center;
+	background-image: url('../assets/icon/box.svg');
+	background-size: cover;
+	width:80px;
+	height:80px;
+
+}
+.box img{
+	   display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+}

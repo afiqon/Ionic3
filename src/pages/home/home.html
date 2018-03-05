@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar color="facebook">
+    <ion-title></ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="background" >
+	<ion-card>
+	  <ion-title>
+<img alt="logo" height="40" style="width: 200px; margin-left: auto;margin-right: auto;"  src="./assets/spip.svg" > 
+</ion-title>	
+
+		<ion-card-header>
+		<ion-buttons start>
+ 
+  </ion-buttons>
+		
+		</ion-card-header>
+		<ion-card-content >
+			<ion-list no-line style="margin-top: 20%;">
+			 <span text-color="my-custom-color"> Pengguna SPIP </span>
+				<ion-item id="rounded">
+					<ion-input input="text" [(ngModel)]="userData.username" placeholder="No Kad Pengenalan/No. Syarikat"></ion-input>
+				</ion-item>
+				<ion-item>
+					<ion-input input="password" type="password" [(ngModel)]="userData.password" placeholder="Password"></ion-input>
+				</ion-item>
+				
+			<button ion-button block  color="facebook" class="btn" (click)="login()">Login</button>
+			<a>Lupa kata Laluan?<b>Klik Disini</b></a>
+			<!-- <p>OR</p -->
+			<!-- <button ion-button block color="facebook">
+				<ion-icon name="logo-facebook"></ion-icon> Login with facebook
+			</button> -->
+			</ion-list>
+		</ion-card-content>
+	</ion-card>
+	<!-- <button ion-button clear full color="light">Don't have and account? Sign up</button> -->
+</ion-content>
+<ion-footer >
+ <ion-toolbar style="height:70px;" color="facebook">
+  <br><br>
+    <p style="text-align:center;"><img  src="./assets/fon/2018.png"></p>
+  </ion-toolbar>
+</ion-footer>

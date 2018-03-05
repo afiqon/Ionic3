@@ -1,0 +1,161 @@
+<ion-menu [content]="content" >
+<ion-header>
+  <ion-navbar hideBackButton color="facebook">
+    <ion-title><div class = "row">
+   <div class = "col col-50"  (click)="goHome2()">     <ion-title>
+<img alt="logo"    src="./assets/icon/home.png" > 
+</ion-title></div>
+   <div class = "col"></div>
+   
+   <button ion-button menuToggle end>
+            
+              <img alt="logo"    src="./assets/icon/noti.png" > 
+        </button>
+   <button ion-button menuToggle end>
+            
+              <img alt="logo"    src="./assets/icon/menu.png"> 
+        </button>
+ <!--   <div class = "col" style="margin-left: 20px;">
+
+   <ion-title>
+   <ion-col><img alt="logo"    src="../assets/icon/user.png" style="margin-right: 10px;"></ion-col>
+   <ion-col><img alt="logo"    src="../assets/icon/noti.png" style="margin-right: 10px;"> </ion-col>
+  <ion-col><button ion-button icon-only menuToggle>
+    <img alt="logo"    src="../assets/icon/menu.png"> 
+    </button></ion-col>
+</ion-title></div> -->
+</div></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+  <ion-content class="background">
+   <!--  <ion-list>
+      <button menuClose class="button-box" ion-item >
+        <ion-icon name="ios-contact-outline"></ion-icon>&nbsp;Nama User  <ion-badge color="light"  text-right>12</ion-badge>
+      </button>
+    </ion-list> -->
+    <ion-card-header>
+     <a style="color: white;">Menu Utama</a>
+     
+    </ion-card-header>
+     
+    <ion-list>
+    <div><ion-row>
+  
+</ion-row>
+  <ion-row>
+  <ion-col col-20>
+      <div class="box"  style="height: 44px;">Notifikasi <!-- ion-badge item-end>3</ion-badge> --></div>  
+    </ion-col>
+  </ion-row>
+<ion-row *ngIf="userDetails.type_id==1;else other_content">
+    <ion-col col-20>
+      <div class="box" (click)="logout()" style="height: 44px;">Log keluar</div>
+    </ion-col>
+  </ion-row>
+  </div>
+   <ng-template #other_content>
+    <div >
+   <!--  <div class="box">
+      <button menuClose class="button-box" ion-item >
+        <img alt="logo"    src="../assets/icon/hotel.png">Hotel 
+      </button></div> -->
+      <ion-row>
+    <ion-col col-20>
+      <div class="box" (click)="goHome()" ><img alt="logo"    src="./assets/icon/hotel.png">Hotel</div>
+    </ion-col>
+  </ion-row>
+   <ion-row>
+    <ion-col col-20>
+    
+      <div class="box" (click)="tobtab()" ><img alt="logo"    src="./assets/icon/plane2.png">Agensi Pelancongan</div>
+    </ion-col>
+  </ion-row>
+   <ion-row>
+    <ion-col col-20>
+      <div class="box" (click)="bpksp()"><img alt="logo"    src="./assets/icon/bas2.png">Kenderaan Pelancongan</div>
+    </ion-col>
+  </ion-row>
+   <ion-row>
+    <ion-col col-20>
+      <div class="box"><img alt="logo"    src="./assets/icon/spa2.png">SPA/Pusat Urutan Kaki</div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-20>
+      <div class="box" (click)="ilp()"><img alt="logo"    src="./assets/icon/ins2.png">Institut Latihan Pelancongan</div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-20>
+      <div class="box"><img alt="logo"    src="./assets/icon/police2.png">Penguatkuasa</div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-20>
+      <div class="box"><img alt="logo"    src="./assets/icon/aduan2.png">Aduan Pertanyaan</div>
+    </ion-col>
+  </ion-row> 
+  <ion-row>
+    <ion-col col-20>
+      <div class="box" (click)="logout()" style="height: 44px;">Log keluar</div>
+    </ion-col>
+  </ion-row>
+  <!-- <ion-row>
+    <ion-col col-20>
+      <div class="box"><img alt="logo"    src="../assets/icon/aduan.png"></div>
+    </ion-col>
+  </ion-row> -->
+  </div></ng-template>
+    </ion-list>
+    </ion-content>
+<!--      <ion-row>
+    <ion-col col-20>
+      <div class="box"><img alt="logo"    src="../assets/icon/hotel.png">Hotel</div>
+    </ion-col>
+  </ion-row>
+   <ion-row>
+    <ion-col col-20>
+      <div class="box"><img alt="logo"    src="../assets/icon/plane2.png">Agensi Pelancongan</div>
+    </ion-col>
+  </ion-row>
+   <ion-row>
+    <ion-col col-20>
+      <div class="box"><img alt="logo"    src="../assets/icon/bas2.png">Kenderaan Pelancongan</div>
+    </ion-col>
+  </ion-row>
+   <ion-row>
+    <ion-col col-20>
+      <div class="box"><img alt="logo"    src="../assets/icon/spa2.png">SPA/Pusat Urutan Kaki</div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-20>
+      <div class="box"><img alt="logo"    src="../assets/icon/ins2.png">Institut Latihan Pelancongan</div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-20>
+      <div class="box"><img alt="logo"    src="../assets/icon/police2.png">Penguatkuasa</div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-20>
+      <div class="box"><img alt="logo"    src="../assets/icon/aduan2.png">Aduan Pertanyaan</div>
+    </ion-col>
+  </ion-row> -->
+  <!-- <ion-row>
+    <ion-col col-20>
+      <div class="box"><img alt="logo"    src="../assets/icon/aduan.png"></div>
+    </ion-col>
+  </ion-row> -->
+    <ion-footer >
+  <ion-toolbar color="facebook">
+    <ion-title ></ion-title>
+  </ion-toolbar>
+</ion-footer>
+  
+
+</ion-menu>
+<ion-nav [root]="rootPage" #content></ion-nav>

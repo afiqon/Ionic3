@@ -1,0 +1,52 @@
+<!--
+  Generated template for the KuiriPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="facebook">
+    <ion-title>Kuiri</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="bg" >
+<div *ngIf="property">
+<ion-card>
+    <ion-card-content>
+            <h2 class="card-title" style="color: white;font-weight: strong;">Tarikh Kuiri:</h2>
+        <div *ngIf="property.status_id;else other_content">
+              <div *ngIf="property.status_id =='12'">
+            <p style="color: white;font-weight: lighter;">{{property.renew_semak_tkh}}</p>
+            <h2 class="card-title" style="color: white;font-weight: strong;">Kuiri:</h2>
+            <!-- <p style="color: white;font-weight: lighter;">{{property.appl_semak_catatan}}</p> -->
+            <p style="color: white;font-weight: lighter;"[innerHTML]="property.appl_semak_catatan "></p>
+            </div>
+              <div *ngIf="property.status_id =='15'|| property.status_id == '13'">
+            <p style="color: white;font-weight: lighter;">{{property.renew_semak_tkh}}</p>
+            <h2 class="card-title" style="color: white;font-weight: strong;">Kuiri:</h2>
+            <!-- <p style="color: white;font-weight: lighter;">{{property.appl_semak_catatan}}</p> -->
+            <p style="color: white;font-weight: lighter;"[innerHTML]="property.appl_semak_catatan "></p>
+            </div>
+        </div>
+         <ng-template #other_content>
+      <div *ngIf="property.appl_status_id=='15' || property.appl_status_id == '13'">
+            <p style="color: white;font-weight: lighter;">{{property.appl_semakppt_tkh}}</p>
+            <h2 class="card-title" style="color: white;font-weight: strong;">Kuiri:</h2>
+            <!-- <p style="color: white;font-weight: lighter;">{{property.appl_semak_catatan}}</p> -->
+            <p style="color: white;font-weight: lighter;"[innerHTML]="property.appl_semakppt_catatan"></p>
+            </div>
+      <div *ngIf="property.appl_status_id=='12'">
+            <p style="color: white;font-weight: lighter;">{{property.appl_semak_tkh}}</p>
+            <h2 class="card-title" style="color: white;font-weight: strong;">Kuiri:</h2>
+            <!-- <p style="color: white;font-weight: lighter;">{{property.appl_semak_catatan}}</p> -->
+            <p style="color: white;font-weight: lighter;"[innerHTML]="property.appl_semak_catatan "></p>
+            </div>
+         </ng-template>
+        </ion-card-content>
+        </ion-card>
+</div>
+</ion-content>

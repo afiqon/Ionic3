@@ -1,0 +1,76 @@
+<!--
+  Generated template for the TgrenewlicensePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="facebook">
+    <ion-title>PEMBAHARUAN LESEN</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="bg">
+<ion-slides pager>
+<div  *ngFor="let propertyx of property">
+    <ion-slide >
+    <ion-card>
+         <ion-card-content>
+            <h2 class="card-title" style="color: white;font-weight: strong;">No Pemandu Pelancong:</h2>
+            <p style="color: white;font-weight: lighter;">{{propertyx.no_tg}}</p>
+
+        </ion-card-content>
+        </ion-card>
+ <ion-card>
+         <ion-card-content>
+            <h2 class="card-title" style="color: white;font-weight: strong;">Jenis Kad:</h2>
+            <p style="color: white;font-weight: lighter;">{{propertyx.appl_warna_kp}}</p>
+
+        </ion-card-content>
+        </ion-card>
+        <ion-card>
+         <ion-card-content>
+            <h2 class="card-title" style="color: white;font-weight: strong;">Tempoh Lesen:</h2>
+            <p style="color: white;font-weight: lighter;">{{propertyx.appl_tkh_lesen_keluar}}- {{propertyx.appl_tkh_lesen_tamat}}</p>
+
+        </ion-card-content>
+        </ion-card>
+         <ion-card>
+         <ion-card-content>
+            <h2 class="card-title" style="color: white;font-weight: strong;">Tarikh Mohon:</h2>
+            <p style="color: white;font-weight: lighter;">{{propertyx.appl_tkh_lesen_keluar}}</p>
+
+        </ion-card-content>
+        </ion-card>
+         <ion-card>
+         <ion-card-content>
+            <h2 class="card-title" style="color: white;font-weight: strong;">Tarikh Bayar fi proses:</h2>
+            <p style="color: white;font-weight: lighter;">{{propertyx.PaymentDate}}</p>
+
+        </ion-card-content>
+        </ion-card>
+          <ion-card>
+         <ion-card-content>
+            <h2 class="card-title" style="color: white;font-weight: strong;">Tarikh Bayar fi lesen:</h2>
+            <p style="color: white;font-weight: lighter;">{{propertyx.PaymentDate}}</p>
+
+        </ion-card-content>
+        </ion-card>
+         <ion-card>
+         <ion-card-content>
+            <h2 class="card-title" style="color: white;font-weight: strong;">Status Permohonan:</h2>
+            <p style="color: white;font-weight: lighter;">{{propertyx.appl_status_name}}</p>
+
+        </ion-card-content>
+        </ion-card><div style="margin-right: 150px;">
+        <div *ngIf="propertyx.appl_status_id== '15' || propertyx.appl_status_id == '12'|| propertyx.appl_status_id == '13'|| propertyx.appl_status_id == '14'">
+        <button ion-button (click)="openKuiri(propertyx)" >Kuiri</button>
+        </div>
+        </div>
+    </ion-slide>
+ </div>
+  </ion-slides>
+</ion-content>

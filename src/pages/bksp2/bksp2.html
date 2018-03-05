@@ -1,0 +1,55 @@
+<!--
+  Generated template for the Bksp2Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="facebook">
+    <ion-title>BPKsp</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="bg">
+       <ion-card *ngIf="property[0];else other_content1">
+        <!-- <img src="{{property[0].pers_tg_id}}"/> -->
+        <ion-card-content>
+            <h2 class="card-title" style="color: white;font-weight: strong;">{{property[0].appl_company_name}}</h2>
+            <p style="color: white;font-weight: lighter;">{{property[0].appl_company_address}}</p>
+              <div *ngFor="let user of users">
+            <!-- <p style="color: white;font-weight: lighter;" >{{user.geometry.location.lat}}</p> -->
+            <button ion-button  (click)="openMap(user,property[0].appl_company_name)">Show Location</button>
+            </div>
+
+            <p style="color: white;font-weight: lighter;text-align: center;">{{property[0].appl_company_phone}}</p>
+           
+            
+              <ion-row>
+           <ion-col>
+            <h2 class="card-title" style="color: white;font-weight: strong;text-align: center;">Kenderaan</h2>
+            </ion-col>
+            <ion-col>
+             <h2 class="card-title" style="color: white;font-weight: strong;text-align: center;">Jenis Kenderaan</h2>
+            </ion-col>
+            </ion-row>
+           <div *ngFor="let user of property">
+           <ion-row>
+           <ion-col>
+           	 <p style="color: white;font-weight: lighter;text-align: center;">{{user.RegistrationNumber }}</p>
+            </ion-col>
+            <ion-col>
+             <h2 class="card-title" style="color: white;font-weight: lighter;text-align: center;">{{user.VehicleName}}</h2>
+            </ion-col>
+            </ion-row>
+           </div>
+        <!--     <div *ngFor="let user of users">
+            
+            <button ion-button *ngIf="user.geometry.location.lat==4.210484;else other_content"   (click)="openMap(name[0],property[0].appl_company_name)">Show Location</button>
+            <ng-template #other_content><button ion-button    (click)="openMap(user,property[0].appl_company_name)">Show Location</button></ng-template>
+            </div> -->
+        </ion-card-content>
+        </ion-card>
+</ion-content>

@@ -1,0 +1,131 @@
+<!--
+  Generated template for the TobtabkuiriPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="facebook">
+    <ion-title>Kuiri</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="bg">
+<div *ngIf="property">
+<ion-card>
+    <ion-card-content>
+            <h2 class="card-title" style="color: white;font-weight: strong;">Tarikh Kuiri:</h2>
+        <div *ngIf="property.tobtab_application_status_id;else other_content">
+              <div *ngIf="property.kelulusan_catatan;else unjuran">
+            <p style="color: white;font-weight: lighter;">{{property.kelulusan_tkh}}</p>
+            <h2 class="card-title" style="color: white;font-weight: strong;">Kuiri:</h2>
+     
+            <p style="color: white;font-weight: lighter;"[innerHTML]="property.kelulusan_catatan "></p>
+            </div>
+             <ng-template #unjuran>
+              <div *ngIf="property.unjuran_catatan;else catatan">
+            <p style="color: white;font-weight: lighter;">{{property.unjuran_tkh}}</p>
+            <h2 class="card-title" style="color: white;font-weight: strong;">Kuiri:</h2>
+      
+            <p style="color: white;font-weight: lighter;"[innerHTML]="property.unjuran_catatan "></p>
+            </div>
+            </ng-template>
+             <ng-template #catatan>
+               <div *ngIf="property.semak_catatan">
+            <p style="color: white;font-weight: lighter;">{{property.semak_tkh}}</p>
+            <h2 class="card-title" style="color: white;font-weight: strong;">Kuiri:</h2>
+      
+            <p style="color: white;font-weight: lighter;"[innerHTML]="property.semak_catatan "></p>
+            </div>
+            </ng-template>
+        </div>
+         <ng-template #other_content>
+    <div *ngIf="property.renew_status_id;else other_content1">
+              <div *ngIf="property.kelulusan_catatan;else unjuran">
+            <p style="color: white;font-weight: lighter;">{{property.kelulusan_date}}</p>
+            <h2 class="card-title" style="color: white;font-weight: strong;">Kuiri:</h2>
+     
+            <p style="color: white;font-weight: lighter;"[innerHTML]="property.kelulusan_catatan "></p>
+            </div>
+             <ng-template #unjuran>
+              <div *ngIf="property.unjuran_catatan;else catatan">
+            <p style="color: white;font-weight: lighter;">{{property.semak_unjuran_date}}</p>
+            <h2 class="card-title" style="color: white;font-weight: strong;">Kuiri:</h2>
+      
+            <p style="color: white;font-weight: lighter;"[innerHTML]="property.semak_unjuran_catatan "></p>
+            </div>
+            </ng-template>
+             <ng-template #catatan>
+               <div *ngIf="property.semak_catatan">
+            <p style="color: white;font-weight: lighter;">{{property.semak_date}}</p>
+            <h2 class="card-title" style="color: white;font-weight: strong;">Kuiri:</h2>
+      
+            <p style="color: white;font-weight: lighter;"[innerHTML]="property.semak_catatan "></p>
+            </div>
+            </ng-template>
+        </div>
+ 
+         </ng-template>
+         <!-- add_field_status_id -->
+                  <ng-template #other_content1>
+    <div *ngIf="property.add_field_status_id;else other_content2">
+              <div *ngIf="property.add_field_kelulusan;else unjuran">
+            <p style="color: white;font-weight: lighter;">{{property.add_field_kelulusan_date}}</p>
+            <h2 class="card-title" style="color: white;font-weight: strong;">Kuiri:</h2>
+     
+            <p style="color: white;font-weight: lighter;"[innerHTML]="property.add_field_kelulusan "></p>
+            </div>
+             <ng-template #unjuran>
+              <div *ngIf="property.add_field_unjuran;else catatan">
+            <p style="color: white;font-weight: lighter;">{{property.add_field_unjuran_date}}</p>
+            <h2 class="card-title" style="color: white;font-weight: strong;">Kuiri:</h2>
+      
+            <p style="color: white;font-weight: lighter;"[innerHTML]="property.add_field_unjuran "></p>
+            </div>
+            </ng-template>
+             <ng-template #catatan>
+               <div *ngIf="property.add_field_semak_comment">
+            <p style="color: white;font-weight: lighter;">{{property.add_field_semak_date}}</p>
+            <h2 class="card-title" style="color: white;font-weight: strong;">Kuiri:</h2>
+      
+            <p style="color: white;font-weight: lighter;"[innerHTML]="property.add_field_semak_comment "></p>
+            </div>
+            </ng-template>
+        </div>
+ 
+         </ng-template>
+         <!-- tambah cawangan -->
+             <ng-template #other_content2>
+    <div *ngIf="property.branch_status_id;else other_content3">
+              <div *ngIf="property.kelulusan_catatan;else unjuran">
+            <p style="color: white;font-weight: lighter;">{{property.kelulusan_tkh}}</p>
+            <h2 class="card-title" style="color: white;font-weight: strong;">Kuiri:</h2>
+     
+            <p style="color: white;font-weight: lighter;"[innerHTML]="property.kelulusan_catatan "></p>
+            </div>
+             <ng-template #unjuran>
+              <div *ngIf="property.unjuran_catatan;else catatan">
+            <p style="color: white;font-weight: lighter;">{{property.unjuran_tkh}}</p>
+            <h2 class="card-title" style="color: white;font-weight: strong;">Kuiri:</h2>
+      
+            <p style="color: white;font-weight: lighter;"[innerHTML]="property.unjuran_catatan "></p>
+            </div>
+            </ng-template>
+             <ng-template #catatan>
+               <div *ngIf="property.semak_catatan">
+            <p style="color: white;font-weight: lighter;">{{property.semak_tkh}}</p>
+            <h2 class="card-title" style="color: white;font-weight: strong;">Kuiri:</h2>
+      
+            <p style="color: white;font-weight: lighter;"[innerHTML]="property.semak_catatan "></p>
+            </div>
+            </ng-template>
+        </div>
+ 
+         </ng-template>
+        </ion-card-content>
+        </ion-card>
+</div>
+</ion-content>

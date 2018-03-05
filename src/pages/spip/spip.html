@@ -1,0 +1,35 @@
+<!--
+  Generated template for the SpiptgPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="facebook">
+    <ion-title>PEMANDU PELANCONG</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="bg">
+<ion-card>
+        <h2 class="card-title" style="color: white;font-weight: strong;">Nama Pemohon:</h2>
+        <p style="color: white;font-weight: lighter;">{{userDetails.usr_fullname}}</p>
+            <div >
+                <h2 class="card-title" style="color: white;font-weight: strong;">No Kad Pengenalan:</h2>
+               <p style="color: white;font-weight: lighter;">{{userDetails.usr_id}}</p>
+          
+            </div >
+    </ion-card>
+     
+  <ion-row>
+  <ion-col >
+    <button ion-button    (click)="openPropertyDetail(property)">Permohonan Baru</button>
+</ion-col>
+<ion-col >
+    <button ion-button (click)="openRenew(property)"   >Pembaharuan Lesen</button>
+    </ion-col>
+    </ion-row>
+</ion-content>
