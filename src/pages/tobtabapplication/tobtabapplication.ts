@@ -24,9 +24,10 @@ userDetails:any;
   	
   }
  blabla(id){
-  this.authService.findTobtabApplication(id).then(
-            property => this.property = property
-        )
+  this.authService.findTobtabApplication(id).then(property => {
+        this.property = property;
+        console.log('console log ionic',this.property);
+      });
    // debugger;
        console.log(this.property);
   }

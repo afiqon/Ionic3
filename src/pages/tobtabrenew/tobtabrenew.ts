@@ -24,9 +24,10 @@ userDetails:any;
   	    this.blabla(this.userDetails.usr_id);
   }
 blabla(id){
-  this.authService.findTobtabRenew(id).then(
-            property => this.property = property
-        )
+  this.authService.findTobtabRenew(id)   .then(property => {
+        this.property = property;
+        console.log('console log ionic',this.property);
+      });
    // debugger;
        console.log(this.property);
   }
