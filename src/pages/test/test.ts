@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,AlertController,LoadingController} from 'ionic-angular';
 import {IndexPage} from '../index/index';
 import {TgdetailPage} from '../tgdetail/tgdetail';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
@@ -24,10 +24,22 @@ export class TestPage {
  resposeData : any;
   userData = {"username":"", "password":"","email":"","name":""};
  public selectedDistricts: any[];
-  constructor(public navCtrl: NavController, public navParams: NavParams,public authService: AuthServiceProvider ) {
+ loader:any;
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams,
+    public authService: AuthServiceProvider,
+    public alertCtrl: AlertController,
+    public loadingCtrl: LoadingController) {
      this.findAll();
      this.findStates();
      this.findDistrict();
+
+     //loading message
+     this.loader = this.loadingCtrl.create({
+         content: `
+      <ion-spinner name="bubbles"></ion-spinner>`,
+    });  
+this.loader.present();
   }
 goHome() {
        this.navCtrl.setRoot(IndexPage);
@@ -55,10 +67,23 @@ signup() {
   }
   
   }
+  
+  Onloading(){
+    
+
+  }
+
  findAll() {
+        
+    
         this.authService.findAll()
-            .then(data => this.properties = data)
-            .catch(error => alert(error));
+            .then(data => {this.properties = data
+              console.log('pemandu pelacong',this.properties);
+              this.loader.dismiss();
+            })
+            .catch(error => {
+              this.onAlert();
+            });
             
     }
      findStates() {
@@ -99,6 +124,17 @@ openPropertyDetail(property: any) {
     onCancel(event) {
         this.findAll();
     }
+
+    onAlert(){
+    let alert = this.alertCtrl.create
+    ({
+      title: 'Please Check Your connection!',
+      subTitle: '',
+      buttons: ['OK']
+    });
+  alert.present();
+    }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad TestPage');
   }

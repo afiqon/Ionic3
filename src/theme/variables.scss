@@ -41,7 +41,10 @@ $colors: (
   dark:       #222,
   facebook:	  #282C73
 );
-
+$loading-ios-background: transparent;
+$loading-md-background: $loading-ios-background;
+$loading-wp-background: $loading-ios-background;
+$loading-md-box-shadow: none;
 
 // App iOS Variables
 // --------------------------------------------------

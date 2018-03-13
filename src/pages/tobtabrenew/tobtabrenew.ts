@@ -29,7 +29,6 @@ blabla(id){
         console.log('console log ionic',this.property);
       });
    // debugger;
-       console.log(this.property);
   }
     openKuiri(x: any) {
         this.navCtrl.push(TobtabkuiriPage, x);

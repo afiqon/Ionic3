@@ -12,10 +12,12 @@
 <img alt="logo"    src="./assets/img/home.png" > 
 </ion-title></div>
    <div class = "col"></div>
+   <div *ngIf="userDetails==0">
      <button ion-button menuToggle (click)="login()">
             
               <img alt="logo"    src="./assets/img/user.png" > 
         </button>
+        </div>
    <button ion-button menuToggle end >
             <!-- dataSet -->
               <img alt="logo"    src="./assets/img/noti.png" style="margin-right: -3px;" ><div *ngIf="dataSet>0"> <ion-badge item-end color="danger">{{dataSet}}</ion-badge></div>
@@ -42,7 +44,7 @@
 <ion-content padding class="bg">
   <ion-card-header>
   
-     <a style="color: white;font-weight: lighter;">Selamat Datang <div *ngIf="userDetails.usr_fullname">{{userDetails.usr_fullname}}</div> </a>
+     <a style="color: white;font-weight: lighter;">Selamat Datang<div *ngIf="userDetails.usr_fullname">{{userDetails.usr_fullname}}</div> </a>
 
      <!-- <button ion-button block  color="facebook" class="btn" (click)="logout()">Logout</button> -->
     </ion-card-header>
