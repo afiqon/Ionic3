@@ -20,7 +20,7 @@
         </ion-card>
             <ion-slides style="margin-top: -150px;" pager>
   <div  *ngFor="let propertyx of property">
-  <ion-slide>
+  <ion-slide *ngIf="property.add_field_status_id <'2'">
     <ion-card>
          <ion-card-content>
             <h2 class="card-title" style="color: white;font-weight: strong;">Tarikh Permohonan:</h2>

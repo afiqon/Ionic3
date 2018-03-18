@@ -24,39 +24,45 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
 })
 export class IndexPage {
   property: any;
-public userDetails: any;
+  public userDetails: any;
   public resposeData: any;
-  public dataSet: any;
+  public NotiArray: any;
   public noRecords: boolean;
+  public ModuleBpksp : any
   constructor(public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController,public authService: AuthServiceProvider,private plt: Platform, private localNotifications: LocalNotifications) {
     const data = JSON.parse(localStorage.getItem("userData"));
       this.plt.ready().then((readySource) => {
-    this.localNotifications.on('click', (notification, state) => {
-      let json = JSON.parse(notification.data);
- 
-      let alert = alertCtrl.create({
-        title: notification.title,
-        subTitle: json.mydata,
-         buttons: ['OK']
-      });
-      alert.present();
-    })
-  });
+        //notification 
+              this.localNotifications.on('click', (notification, state) => {
+                let json = JSON.parse(notification.data);
+           
+                let alert = alertCtrl.create({
+                  title: notification.title,
+                  subTitle: json.mydata,
+                   buttons: ['OK']
+                });
+                alert.present();
+              })
+            });
+
+
       if(data){
      this.userDetails = data.userData;
      if(data.userData.type_id==1)
 {
-  let alert = alertCtrl.create({
-        title: 'Lesen anda akan tamat',
-        subTitle: 'Sila Buat Pembaharuan Lesen',
-         buttons: ['OK']
-      });
-      alert.present();
+  // let alert = alertCtrl.create({
+  //       title: 'Lesen anda akan tamat',
+  //       subTitle: 'Sila Buat Pembaharuan Lesen',
+  //        buttons: ['OK']
+  //     });
+  //     alert.present();
 }
      if(data.userData.type_id==2)
       {
         this.findExpiredTobtab(data.userData.usr_id);
+
         this.findKuiri(data.userData.usr_id);
+        this.findBpksp(data.userData.usr_id);
       }
   }
    else{
@@ -84,6 +90,7 @@ backToWelcome() {
     localStorage.clear();
     setTimeout(() => this.backToWelcome(), 1000);
   }
+
   findExpiredTobtab(id)
   {
  this.authService.findTobtabExpired(this.userDetails.usr_id).then(data => {
@@ -102,11 +109,12 @@ backToWelcome() {
     })
 
  }
+
    findKuiri(id)
   {
  this.authService.findTobtabKuiri(this.userDetails.usr_id).then(data => {
       console.log(data);
-      this.dataSet=data[0].count;
+      this.NotiArray=data[0].count;
 //do here what you want
  if(data[0].count>0)
  {
@@ -121,6 +129,17 @@ backToWelcome() {
     })
 
  }
+  findBpksp(id){
+    this.authService.findBPSKP(id).then(data=>{
+
+      if(data.length>0){
+      
+      this.ModuleBpksp=1;
+      }
+
+    })
+  }
+
   pemandu(){
     //if logged in and type_id is 1
     if(this.userDetails.type_id==1)
@@ -130,6 +149,7 @@ backToWelcome() {
     else
     this.navCtrl.setRoot(TestPage);
   }
+
   tobtab(){
       if(this.userDetails.type_id==2)
     {
@@ -138,16 +158,20 @@ backToWelcome() {
     else
     this.navCtrl.setRoot(TobtabPage);
   }
+
   bpksp(){
     this.navCtrl.setRoot(BpkspPage);
   }
+
   ilp(){
     this.navCtrl.setRoot(IlpPage);
   }
+
   login()
   {
     this.navCtrl.setRoot(HomePage);
   }
+
   aduan()
   {
     this.navCtrl.setRoot(AduanPage);

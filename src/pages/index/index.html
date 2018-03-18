@@ -13,14 +13,14 @@
 </ion-title></div>
    <div class = "col"></div>
    <div *ngIf="userDetails==0">
-     <button ion-button menuToggle (click)="login()">
+     <button ion-button  (click)="login()" style="background-color: inherit;box-shadow: inherit;">
             
               <img alt="logo"    src="./assets/img/user.png" > 
         </button>
         </div>
    <button ion-button menuToggle end >
             <!-- dataSet -->
-              <img alt="logo"    src="./assets/img/noti.png" style="margin-right: -3px;" ><div *ngIf="dataSet>0"> <ion-badge item-end color="danger">{{dataSet}}</ion-badge></div>
+              <img alt="logo"    src="./assets/img/noti.png" style="margin-right: -3px;" ><div *ngIf="NotiArray>0"> <ion-badge item-end color="danger">{{NotiArray}}</ion-badge></div>
         </button>
    <button ion-button menuToggle end>
             
@@ -128,8 +128,8 @@
                 <ion-col text-center class="apcs">
                     <div (click)="tobtab()"><img src="./assets/fon/agensi.png"> </div>
                 </ion-col>
-                <ion-col text-center class="apcs">
-                
+                <ion-col text-center class="apcs" *ngIf="ModuleBpksp==1">
+                    <div (click)="tobtab()"><img src="./assets/fon/kenderaan.png"> </div>
                 </ion-col>
             </ion-row>
            

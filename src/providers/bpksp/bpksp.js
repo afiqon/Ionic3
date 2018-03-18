@@ -17,38 +17,39 @@ import 'rxjs/add/operator/map';
   See https://angular.io/guide/dependency-injection for more info on providers
   and Angular DI.
 */
+var apiUrl = "http://132.148.150.216:1440";
 var BpkspProvider = /** @class */ (function () {
     function BpkspProvider(http) {
         this.http = http;
         console.log('Hello BpkspProvider Provider');
     }
     BpkspProvider.prototype.findAllBpksp = function () {
-        return this.http.get('http://132.148.150.216:1440/bpksp_awam')
+        return this.http.get(apiUrl + '/bpksp_awam')
             .map(function (res) { return res.json(); })
             .toPromise();
     };
     BpkspProvider.prototype.findStates = function () {
-        return this.http.get('http://132.148.150.216:1440/negeri_bpksp')
+        return this.http.get(apiUrl + '/negeri_bpksp')
             .map(function (res) { return res.json(); })
             .toPromise();
     };
     BpkspProvider.prototype.findBpkspState = function (id) {
-        return this.http.get('http://132.148.150.216:1440/bpksp_awam_negeri?id=' + id)
+        return this.http.get(apiUrl + '/bpksp_awam_negeri?id=' + id)
             .map(function (res) { return res.json(); })
             .toPromise();
     };
     BpkspProvider.prototype.findByIdBpksp = function (id) {
-        return this.http.get('http://132.148.150.216:1440/bpksp_awam_papar?id=' + id)
+        return this.http.get(apiUrl + '/bpksp_awam_papar?id=' + id)
             .map(function (res) { return res.json(); })
             .toPromise();
     };
     BpkspProvider.prototype.findBpkspDistrict = function (id) {
-        return this.http.get('http://132.148.150.216:1440/bpksp_awam_daerah?id=' + id)
+        return this.http.get(apiUrl + '/bpksp_awam_daerah?id=' + id)
             .map(function (res) { return res.json(); })
             .toPromise();
     };
     BpkspProvider.prototype.findByNameBpksp = function (key) {
-        return this.http.get("http://132.148.150.216:1440/bpksp_awam?key=" + key)
+        return this.http.get(apiUrl + "/bpksp_awam?key=" + key)
             .map(function (res) { return res.json(); })
             .toPromise();
     };

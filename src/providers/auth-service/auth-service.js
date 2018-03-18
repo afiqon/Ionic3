@@ -11,7 +11,8 @@ import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
-var apiUrl = apiUrl + '/', propertiesURL = apiUrl + '/' + 'pemandu_pelancong';
+var apiUrl = "http://132.148.150.216:1440";
+var apiTest = 'http://localhost:1440';
 var AuthServiceProvider = /** @class */ (function () {
     function AuthServiceProvider(http) {
         this.http = http;
@@ -46,8 +47,8 @@ var AuthServiceProvider = /** @class */ (function () {
     //     });
     //   });
     // }
-    AuthServiceProvider.prototype.findAllTobtab = function () {
-        return this.http.get(apiUrl + '/tobtab_awam_carian')
+    AuthServiceProvider.prototype.findAllTobtab = function (id) {
+        return this.http.get(apiTest + '/tobtab_awam_carian?id=' + id)
             .map(function (res) { return res.json(); })
             .toPromise();
     };
@@ -62,12 +63,12 @@ var AuthServiceProvider = /** @class */ (function () {
             .toPromise();
     };
     AuthServiceProvider.prototype.findByName = function (key) {
-        return this.http.get("http://132.148.150.216:1440/pemandu_pelancong_cari?key=" + key)
+        return this.http.get(apiUrl + "/pemandu_pelancong_cari?key=" + key)
             .map(function (res) { return res.json(); })
             .toPromise();
     };
     AuthServiceProvider.prototype.findByNameTobtab = function (key) {
-        return this.http.get("http://132.148.150.216:1440/tobtab_awam_carian2?key=" + key)
+        return this.http.get(apiUrl + "/tobtab_awam_carian2?key=" + key)
             .map(function (res) { return res.json(); })
             .toPromise();
     };
@@ -101,6 +102,49 @@ var AuthServiceProvider = /** @class */ (function () {
             .map(function (res) { return res.json(); })
             .toPromise();
     };
+    AuthServiceProvider.prototype.findTobtabApplication = function (id) {
+        return this.http.get(apiUrl + '/tobtab_mohon_lesen_baru?id=' + id)
+            .map(function (res) { return res.json(); })
+            .toPromise();
+    };
+    AuthServiceProvider.prototype.findTobtabRenew = function (id) {
+        return this.http.get(apiUrl + '/tobtab_renew_lesen?id=' + id)
+            .map(function (res) { return res.json(); })
+            .toPromise();
+    };
+    //tobtab_tukar_status
+    AuthServiceProvider.prototype.findTobtabStatus = function (id) {
+        return this.http.get(apiUrl + '/tobtab_tukar_status?id=' + id)
+            .map(function (res) { return res.json(); })
+            .toPromise();
+    };
+    //tambah bidang
+    AuthServiceProvider.prototype.findTobtabAddField = function (id) {
+        return this.http.get(apiUrl + '/tobtab_tambah_bidang?id=' + id)
+            .map(function (res) { return res.json(); })
+            .toPromise();
+    };
+    AuthServiceProvider.prototype.findTobtabAddBranch = function (id) {
+        return this.http.get(apiUrl + '/tobtab_tambah_cawangan?id=' + id)
+            .map(function (res) { return res.json(); })
+            .toPromise();
+    };
+    AuthServiceProvider.prototype.findTobtabExpired = function (id) {
+        return this.http.get(apiUrl + '/tobtab_expired?id=' + id)
+            .map(function (res) { return res.json(); })
+            .toPromise();
+    };
+    AuthServiceProvider.prototype.findTobtabKuiri = function (id) {
+        return this.http.get(apiUrl + '/tobtab_kuiri_noti?id=' + id)
+            .map(function (res) { return res.json(); })
+            .toPromise();
+    };
+    //if user is tobtab 
+    AuthServiceProvider.prototype.findBPSKP = function (id) {
+        return this.http.get(apiTest + '/spipBpksp?id=' + id)
+            .map(function (res) { return res.json(); })
+            .toPromise();
+    };
     AuthServiceProvider.prototype.getUsers = function (id) {
         var _this = this;
         return new Promise(function (resolve) {
@@ -115,7 +159,7 @@ var AuthServiceProvider = /** @class */ (function () {
         var _this = this;
         return new Promise(function (resolve, reject) {
             var headers = new Headers({ 'Content-Type': 'application/json' });
-            _this.http.post(apiUrl + type, JSON.stringify(credentials), { headers: headers })
+            _this.http.post(apiUrl + '/' + type, JSON.stringify(credentials), { headers: headers })
                 .subscribe(function (res) {
                 resolve(res.json());
             }, function (err) {

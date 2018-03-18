@@ -30,6 +30,14 @@ import { SpipPage } from '../pages/spip/spip';
 import { TgnewlicensePage } from '../pages/tgnewlicense/tgnewlicense';
 import { KuiriPage } from '../pages/kuiri/kuiri';
 import { TgrenewlicensePage } from '../pages/tgrenewlicense/tgrenewlicense';
+import { SpiptobtabPage } from '../pages/spiptobtab/spiptobtab';
+import { TobtabapplicationPage } from '../pages/tobtabapplication/tobtabapplication';
+import { TobtabrenewPage } from '../pages/tobtabrenew/tobtabrenew';
+import { TobtabchangestatusPage } from '../pages/tobtabchangestatus/tobtabchangestatus';
+import { TobtabaddfieldPage } from '../pages/tobtabaddfield/tobtabaddfield';
+import { TobtabaddbranchPage } from '../pages/tobtabaddbranch/tobtabaddbranch';
+import { TobtabkuiriPage } from '../pages/tobtabkuiri/tobtabkuiri';
+import { LocalNotifications } from '@ionic-native/local-notifications';
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -52,6 +60,13 @@ var AppModule = /** @class */ (function () {
                 TgnewlicensePage,
                 KuiriPage,
                 TgrenewlicensePage,
+                SpiptobtabPage,
+                TobtabapplicationPage,
+                TobtabchangestatusPage,
+                TobtabrenewPage,
+                TobtabaddfieldPage,
+                TobtabaddbranchPage,
+                TobtabkuiriPage,
                 MapPage
             ],
             imports: [
@@ -77,6 +92,13 @@ var AppModule = /** @class */ (function () {
                 TgnewlicensePage,
                 KuiriPage,
                 TgrenewlicensePage,
+                SpiptobtabPage,
+                TobtabapplicationPage,
+                TobtabchangestatusPage,
+                TobtabrenewPage,
+                TobtabaddfieldPage,
+                TobtabaddbranchPage,
+                TobtabkuiriPage,
                 MapPage
             ],
             providers: [
@@ -85,7 +107,8 @@ var AppModule = /** @class */ (function () {
                 { provide: ErrorHandler, useClass: IonicErrorHandler },
                 AuthServiceProvider,
                 BpkspProvider,
-                IlpProvider
+                IlpProvider,
+                LocalNotifications
             ]
         })
     ], AppModule);

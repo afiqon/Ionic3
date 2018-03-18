@@ -41,6 +41,11 @@ export class HomePage {
   console.log(this.userData);
    
   }
+
+  home(){
+    this.navCtrl.setRoot(IndexPage);
+
+  }
     login(){
    if(this.userData.username && this.userData.password){
           this.authService.postData(this.userData, "login").then((result) =>{

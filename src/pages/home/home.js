@@ -45,6 +45,9 @@ var HomePage = /** @class */ (function () {
         //   }
         console.log(this.userData);
     };
+    HomePage.prototype.home = function () {
+        this.navCtrl.setRoot(IndexPage);
+    };
     HomePage.prototype.login = function () {
         var _this = this;
         if (this.userData.username && this.userData.password) {

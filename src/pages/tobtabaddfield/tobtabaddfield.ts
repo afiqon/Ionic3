@@ -25,10 +25,12 @@ userDetails:any;
   }
 blabla(id){
   this.authService.findTobtabAddField(id).then(
-            property => this.property = property
+            property => {this.property = property;
+              console.log('tambah bidang',this.property);
+              // this.property.filter(district => district.add_field_status_id == 2);
+            }
         )
-   // debugger;
-       console.log(this.property);
+
   }
   openKuiri(x: any) {
         this.navCtrl.push(TobtabkuiriPage, x);

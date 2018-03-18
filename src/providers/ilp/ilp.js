@@ -17,33 +17,34 @@ import 'rxjs/add/operator/map';
   See https://angular.io/guide/dependency-injection for more info on providers
   and Angular DI.
 */
+var apiUrl = "http://132.148.150.216:1440";
 var IlpProvider = /** @class */ (function () {
     function IlpProvider(http) {
         this.http = http;
         console.log('Hello IlpProvider Provider');
     }
     IlpProvider.prototype.findAllIlp = function () {
-        return this.http.get('http://132.148.150.216:1440/awam_ilp')
+        return this.http.get(apiUrl + '/awam_ilp')
             .map(function (res) { return res.json(); })
             .toPromise();
     };
     IlpProvider.prototype.findByIdIlp = function (id) {
-        return this.http.get('http://132.148.150.216:1440/paparan_awam_ilp?id=' + id)
+        return this.http.get(apiUrl + '/paparan_awam_ilp?id=' + id)
             .map(function (res) { return res.json(); })
             .toPromise();
     };
     IlpProvider.prototype.findIlpByState = function (id) {
-        return this.http.get('http://132.148.150.216:1440/awam_ilp_negeri?id=' + id)
+        return this.http.get(apiUrl + '/awam_ilp_negeri?id=' + id)
             .map(function (res) { return res.json(); })
             .toPromise();
     };
     IlpProvider.prototype.findIlpDistrict = function (id) {
-        return this.http.get('http://132.148.150.216:1440/awam_ilp_daerah?id=' + id)
+        return this.http.get(apiUrl + '/awam_ilp_daerah?id=' + id)
             .map(function (res) { return res.json(); })
             .toPromise();
     };
     IlpProvider.prototype.findByNameIlp = function (key) {
-        return this.http.get('http://132.148.150.216:1440/awam_ilp?key=' + key)
+        return this.http.get(apiUrl + '/awam_ilp?key=' + key)
             .map(function (res) { return res.json(); })
             .toPromise();
     };

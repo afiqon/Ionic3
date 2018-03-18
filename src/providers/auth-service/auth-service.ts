@@ -43,8 +43,8 @@ export class AuthServiceProvider {
 //     });
 //   });
 // }
-  findAllTobtab(){
-      return this.http.get(apiUrl+'/tobtab_awam_carian')
+  findAllTobtab(id){
+      return this.http.get(apiTest+'/tobtab_awam_carian?id='+id)
             .map(res => res.json())
             .toPromise();
   }
@@ -144,6 +144,12 @@ export class AuthServiceProvider {
              .map(res => res.json())
             .toPromise();
   
+  }
+  //if user is tobtab 
+  findBPSKP(id){
+ return this.http.get(apiTest+'/spipBpksp?id='+id)
+             .map(res => res.json())
+            .toPromise();
   }
   getUsers(id) {
   return new Promise(resolve => {

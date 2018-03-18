@@ -8,7 +8,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, LoadingController } from 'ionic-angular';
 import { IndexPage } from '../index/index';
 import { TgdetailPage } from '../tgdetail/tgdetail';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
@@ -19,15 +19,22 @@ import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
  * Ionic pages and navigation.
  */
 var TestPage = /** @class */ (function () {
-    function TestPage(navCtrl, navParams, authService) {
+    function TestPage(navCtrl, navParams, authService, alertCtrl, loadingCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.authService = authService;
+        this.alertCtrl = alertCtrl;
+        this.loadingCtrl = loadingCtrl;
         this.searchKey = "";
         this.userData = { "username": "", "password": "", "email": "", "name": "" };
         this.findAll();
         this.findStates();
         this.findDistrict();
+        //loading message
+        this.loader = this.loadingCtrl.create({
+            content: "\n      <ion-spinner name=\"bubbles\"></ion-spinner>",
+        });
+        this.loader.present();
     }
     TestPage.prototype.goHome = function () {
         this.navCtrl.setRoot(IndexPage);
@@ -54,11 +61,19 @@ var TestPage = /** @class */ (function () {
             console.log("Give valid information.");
         }
     };
+    TestPage.prototype.Onloading = function () {
+    };
     TestPage.prototype.findAll = function () {
         var _this = this;
         this.authService.findAll()
-            .then(function (data) { return _this.properties = data; })
-            .catch(function (error) { return alert(error); });
+            .then(function (data) {
+            _this.properties = data;
+            console.log('pemandu pelacong', _this.properties);
+            _this.loader.dismiss();
+        })
+            .catch(function (error) {
+            _this.onAlert();
+        });
     };
     TestPage.prototype.findStates = function () {
         var _this = this;
@@ -97,6 +112,14 @@ var TestPage = /** @class */ (function () {
     TestPage.prototype.onCancel = function (event) {
         this.findAll();
     };
+    TestPage.prototype.onAlert = function () {
+        var alert = this.alertCtrl.create({
+            title: 'Please Check Your connection!',
+            subTitle: '',
+            buttons: ['OK']
+        });
+        alert.present();
+    };
     TestPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad TestPage');
     };
@@ -106,7 +129,11 @@ var TestPage = /** @class */ (function () {
             selector: 'page-test',
             templateUrl: 'test.html',
         }),
-        __metadata("design:paramtypes", [NavController, NavParams, AuthServiceProvider])
+        __metadata("design:paramtypes", [NavController,
+            NavParams,
+            AuthServiceProvider,
+            AlertController,
+            LoadingController])
     ], TestPage);
     return TestPage;
 }());
