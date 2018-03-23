@@ -31,6 +31,18 @@ import { TobtabchangestatusPage } from '../pages/tobtabchangestatus/tobtabchange
 import { TobtabaddfieldPage } from '../pages/tobtabaddfield/tobtabaddfield';
 import { TobtabaddbranchPage } from '../pages/tobtabaddbranch/tobtabaddbranch';
 import { TobtabkuiriPage } from '../pages/tobtabkuiri/tobtabkuiri';
+import { SpipbpkspPage } from '../pages/spipbpksp/spipbpksp';
+import { BpkspapplicationPage } from '../pages/bpkspapplication/bpkspapplication';
+import { BpksprenewPage } from '../pages/bpksprenew/bpksprenew';
+import { BpkspchangeconditionPage } from '../pages/bpkspchangecondition/bpkspchangecondition';
+import { SpipilpPage } from '../pages/spipilp/spipilp';
+import { IlpapplicationPage } from '../pages/ilpapplication/ilpapplication';
+import { IlprenewPage } from '../pages/ilprenew/ilprenew';
+import { IlpbranchPage } from '../pages/ilpbranch/ilpbranch';
+import { IlpchangestatusPage } from '../pages/ilpchangestatus/ilpchangestatus';
+import { IlppermitPage } from '../pages/ilppermit/ilppermit';
+import { IlppermitdetailPage } from '../pages/ilppermitdetail/ilppermitdetail';
+import { QueryPage } from '../pages/query/query';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 @NgModule({
   declarations: [
@@ -57,6 +69,18 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
     TobtabaddfieldPage,
     TobtabaddbranchPage,
     TobtabkuiriPage,
+    SpipbpkspPage,
+    BpkspapplicationPage,
+    BpksprenewPage,
+    BpkspchangeconditionPage,
+    SpipilpPage,
+    IlpapplicationPage,
+    IlprenewPage,
+    IlpbranchPage,
+    IlpchangestatusPage,
+    IlppermitPage,
+    IlppermitdetailPage,
+    QueryPage,
     MapPage
   ],
   imports: [
@@ -89,6 +113,18 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
     TobtabaddfieldPage,
     TobtabaddbranchPage,
     TobtabkuiriPage,
+    SpipbpkspPage,
+    BpkspapplicationPage,
+    BpksprenewPage,
+    BpkspchangeconditionPage,
+    SpipilpPage,
+    IlpapplicationPage,
+    IlprenewPage,
+    IlpbranchPage,
+    IlpchangestatusPage,
+    IlppermitPage,
+    IlppermitdetailPage,
+    QueryPage,
     MapPage
   ],
   providers: [

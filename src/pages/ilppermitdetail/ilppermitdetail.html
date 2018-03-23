@@ -1,0 +1,27 @@
+<!--
+  Generated template for the IlppermitdetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="facebook">
+    <ion-title text-wrap>Status Permohonan Permit</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="bg">
+<ion-card>
+    <ion-card-content>
+  		<h2 class="card-title" style="color: white;font-weight: strong;">Nama:</h2>
+         <p style="color: white;font-weight: lighter;">{{property.name}}</p>
+        <h2 class="card-title" style="color: white;font-weight: strong;">Tarikh Mohon:</h2>
+     	<p style="color: white;font-weight: lighter;">{{property.application_date}}</p>
+     	 <h2 class="card-title" style="color: white;font-weight: strong;">Status Permohonan:</h2>
+     	<p style="color: white;font-weight: lighter;">{{property.status_name}}</p>
+	</ion-card-content>
+</ion-card>
+</ion-content>

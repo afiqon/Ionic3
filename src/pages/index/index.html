@@ -42,7 +42,7 @@
 
 
 <ion-content padding class="bg">
-  <ion-card-header>
+  <ion-card-header text-wrap>
   
      <a style="color: white;font-weight: lighter;">Selamat Datang<div *ngIf="userDetails.usr_fullname">{{userDetails.usr_fullname}}</div> </a>
 
@@ -117,7 +117,7 @@
            
         </ion-grid>
   </div>
-  <!-- if user is tobtab -->
+  <!-- if user is syarikat -->
 <ng-template #other_content>
           <div *ngIf="userDetails.type_id==2;else other_content1"> <ion-grid text-center class="middle-title">
             <ion-row>
@@ -128,11 +128,21 @@
                 <ion-col text-center class="apcs">
                     <div (click)="tobtab()"><img src="./assets/fon/agensi.png"> </div>
                 </ion-col>
-                <ion-col text-center class="apcs" *ngIf="ModuleBpksp==1">
-                    <div (click)="tobtab()"><img src="./assets/fon/kenderaan.png"> </div>
+                <ion-col text-center class="apcs" >
+                    <div (click)="bpksp()" *ngIf="ModuleBpksp==1"><img src="./assets/fon/kenderaan.png"> </div>
                 </ion-col>
             </ion-row>
-           
+            <ion-row>
+                <ion-col >
+                    <div (click)="ilp()" *ngIf="ModuleIlp==1"><img src="./assets/fon/ilp.png"> </div>
+                </ion-col>
+                <ion-col>
+                    <!-- <div (click)="bpksp()"><img src="./assets/fon/kenderaan.png"> </div> -->
+                </ion-col>
+                <ion-col>
+                    <!-- <div (click)="aduan()"><img src="./assets/fon/ADUAN.png"> </div> -->
+                </ion-col>
+            </ion-row>  
         </ion-grid>
   </div>
 </ng-template>

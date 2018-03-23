@@ -145,9 +145,62 @@ export class AuthServiceProvider {
             .toPromise();
   
   }
-  //if user is tobtab 
+  //if pengguna syarikat ada BPKSP
   findBPSKP(id){
  return this.http.get(apiTest+'/spipBpksp?id='+id)
+             .map(res => res.json())
+            .toPromise();
+  }
+  //bpksp mohon lesen baru
+  BpkspApplication(id,date){
+ return this.http.get(apiTest+'/bpksp_lesen_baru?id='+id+'&date='+date)
+             .map(res => res.json())
+            .toPromise();
+  }
+  //bpksp pembahruan lesen
+  BpkspRenew(id,date){
+ return this.http.get(apiTest+'/bpksp_pembaharuan?id='+id+'&date='+date)
+             .map(res => res.json())
+            .toPromise();
+  }
+  //bpksp ubah syarat lesen
+   BpkspChangeCondition(id,date){
+ return this.http.get(apiTest+'/bpksp_ubahsyarat?id='+id+'&date='+date)
+             .map(res => res.json())
+            .toPromise();
+  }
+  // if pengguna syarikat ad ILP
+    findILP(id){
+ return this.http.get(apiTest+'/spipILP?id='+id)
+             .map(res => res.json())
+            .toPromise();
+  }
+  //ILP lesen baru
+  ILPApplication(id){
+ return this.http.get(apiTest+'/ilp_permohonan_lesen_baru?id='+id)
+             .map(res => res.json())
+            .toPromise();
+  }
+  //ILP pembaharuan
+  ILPRenew(id){
+ return this.http.get(apiTest+'/ilp_pembaharuan?id='+id)
+             .map(res => res.json())
+            .toPromise();
+  }
+  //ILP tukar status
+   ILPChangestatus(id){
+ return this.http.get(apiTest+'/ilp_tukarstatus?id='+id)
+             .map(res => res.json())
+            .toPromise();
+  }
+    //ILP tambah cawangan
+   ILPAddbranch(id){
+ return this.http.get(apiTest+'/ilp_branch?id='+id)
+             .map(res => res.json())
+            .toPromise();
+  }
+   ILPPermit(id){
+ return this.http.get(apiTest+'/ilp_permit?id='+id)
              .map(res => res.json())
             .toPromise();
   }

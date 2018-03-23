@@ -1,0 +1,59 @@
+<!--
+  Generated template for the BpkspapplicationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+
+<ion-content padding class="bg">
+
+       <div  *ngFor="let propertyx of property">
+  <ion-navbar color="facebook">
+    <ion-title>PEMBAHARUAN LESEN</ion-title>
+  </ion-navbar>
+    <ion-card>
+         <ion-card-content>
+            <h2 class="card-title" style="color: white;font-weight: strong;">{{userDetails.usr_fullname}}</h2>
+            <h2 class="card-title" style="color: white;font-weight: strong;text-align: center;">{{userDetails.usr_id}}</h2>
+            <!-- <p style="color: white;font-weight: lighter;">{{propertyx.appl_date}}</p> -->
+		</ion-card-content>
+        </ion-card>
+    <ion-card>
+         <ion-card-content>
+            <h2 class="card-title" style="color: white;font-weight: strong;">Tarikh Permohonan:</h2>
+            
+            <p style="color: white;font-weight: lighter;">{{propertyx.ApplicationDate}}</p>
+			        </ion-card-content>
+        </ion-card>
+     <ion-card>
+         <ion-card-content>
+            <h2 class="card-title" style="color: white;font-weight: strong;">Status Permohonan:</h2>
+            <p style="color: white;font-weight: lighter;">{{propertyx.StatusName}}</p>
+
+        </ion-card-content>
+        </ion-card>
+     <ion-card>
+         <ion-card-content>
+            <h2 class="card-title" style="color: white;font-weight: strong;">No. Rujukan Lesen:</h2>
+            <p style="color: white;font-weight: lighter;">{{propertyx.LicenseNumber}}</p>
+
+        </ion-card-content>
+        </ion-card>
+          <div *ngIf="propertyx.fk_StatusID== '59'">
+              <button ion-button (click)="openKuiri(propertyx)" >Kuiri</button> 
+        </div>
+
+        </div>
+        <ion-card *ngIf="noRecords">
+ <ion-item>
+    <h2 class="card-title" style="color: white;font-weight: strong;">Tiada Rekod</h2>
+  </ion-item>
+</ion-card>
+          <ion-infinite-scroll (ionInfinite)="$event.waitFor(doInfinite())" *ngIf="!noRecords">
+   <ion-infinite-scroll-content>
+   	
+   </ion-infinite-scroll-content>
+			</ion-infinite-scroll>
+</ion-content>

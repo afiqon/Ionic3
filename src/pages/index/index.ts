@@ -8,6 +8,8 @@ import {IlpPage} from '../ilp/ilp';
 import { AduanPage } from '../aduan/aduan';
 import { SpipPage } from '../spip/spip';
 import { SpiptobtabPage } from '../spiptobtab/spiptobtab';
+import { SpipbpkspPage } from '../spipbpksp/spipbpksp';
+import { SpipilpPage } from '../spipilp/spipilp';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 /**
@@ -28,7 +30,8 @@ export class IndexPage {
   public resposeData: any;
   public NotiArray: any;
   public noRecords: boolean;
-  public ModuleBpksp : any
+  public ModuleBpksp : any;
+  public ModuleIlp : any
   constructor(public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController,public authService: AuthServiceProvider,private plt: Platform, private localNotifications: LocalNotifications) {
     const data = JSON.parse(localStorage.getItem("userData"));
       this.plt.ready().then((readySource) => {
@@ -63,6 +66,7 @@ export class IndexPage {
 
         this.findKuiri(data.userData.usr_id);
         this.findBpksp(data.userData.usr_id);
+        this.findIlp(data.userData.usr_id);
       }
   }
    else{
@@ -134,12 +138,21 @@ backToWelcome() {
 
       if(data.length>0){
       
-      this.ModuleBpksp=1;
+      this.ModuleBpksp=1;  
       }
 
     })
   }
+  findIlp(id){
+    this.authService.findILP(id).then(data=>{
 
+      if(data.length>0){
+      
+      this.ModuleIlp=1;  
+      }
+
+    })
+  }
   pemandu(){
     //if logged in and type_id is 1
     if(this.userDetails.type_id==1)
@@ -160,11 +173,25 @@ backToWelcome() {
   }
 
   bpksp(){
-    this.navCtrl.setRoot(BpkspPage);
+      if(this.userDetails.type_id==2)
+      {
+        this.navCtrl.push(SpipbpkspPage);
+      }
+      else{
+         this.navCtrl.setRoot(BpkspPage);
+      }
+   
   }
 
-  ilp(){
+  ilp(){//SpipilpPage
+    if(this.userDetails.type_id==2)
+    {
+      this.navCtrl.push(SpipilpPage);
+    }
+    else{
     this.navCtrl.setRoot(IlpPage);
+    }
+
   }
 
   login()

@@ -1,0 +1,34 @@
+<!--
+  Generated template for the IlppermitPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+
+<ion-content padding class="bg">
+<ion-navbar color="facebook">
+    <ion-title>Senarai Pemohon Permit</ion-title>
+  </ion-navbar>
+<ion-card>
+         <ion-card-content>
+            <h2 class="card-title" style="color: white;font-weight: strong;text-align: center;">{{userDetails.usr_fullname}}</h2>
+            <h2 class="card-title" style="color: white;font-weight: strong;text-align: center;">{{userDetails.usr_id}}</h2>
+            <div *ngFor="let ilp of ilps">
+            <h2 class="card-title" style="color: white;font-weight: strong;text-align: center;">No Lesen: <div style="font-weight: lighter;">{{ilp.license_no}}</div></h2>
+          <h2 class="card-title" style="color: white;font-weight: strong;text-align: center;">Tarikh Tamat Lesen:</h2>
+            <p style="color: white;font-weight: lighter;text-align: center;">{{ilp.license_end}}</p>
+            </div>
+			        </ion-card-content>
+</ion-card>
+<div  *ngFor="let propertyx of properties">
+    <ion-card (click)="openDetail(propertyx)">
+         <ion-card-content>
+           
+            
+            <p style="color: white;font-weight: lighter;text-align: center;">{{propertyx.name}}</p>
+              </ion-card-content>
+        </ion-card>
+  </div>
+</ion-content>

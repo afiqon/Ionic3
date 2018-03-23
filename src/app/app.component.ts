@@ -25,6 +25,8 @@ import { TobtabchangestatusPage } from '../pages/tobtabchangestatus/tobtabchange
 import { TobtabaddfieldPage } from '../pages/tobtabaddfield/tobtabaddfield';
 import { TobtabaddbranchPage } from '../pages/tobtabaddbranch/tobtabaddbranch';
 import { TobtabkuiriPage } from '../pages/tobtabkuiri/tobtabkuiri';
+import { SpipbpkspPage } from '../pages/spipbpksp/spipbpksp';
+
 @Component({
   templateUrl: 'app.html'
 })
