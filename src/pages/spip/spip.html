@@ -23,7 +23,15 @@
           
             </div >
     </ion-card>
-     
+     <ion-card *ngFor="let license of licenses">
+        <h2 class="card-title" style="color: white;font-weight: strong;">No Lesen:</h2>
+        <p style="color: white;font-weight: lighter;">{{license.tg_no_lesen}}</p>
+            <div >
+                <h2 class="card-title" style="color: white;font-weight: strong;">Tarikh Tamat:</h2>
+               <p style="color: white;font-weight: lighter;">{{license.tg_tkh_lesen_tamat}}</p>
+          
+            </div >
+    </ion-card>
   <ion-row>
   <ion-col >
     <button ion-button    (click)="openPropertyDetail(property)">Permohonan Baru</button>

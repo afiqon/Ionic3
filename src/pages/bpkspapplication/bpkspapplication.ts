@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
+import { QueryPage } from '../query/query';
+
 /**
  * Generated class for the BpkspapplicationPage page.
  *
@@ -24,7 +26,10 @@ public noRecords: boolean;
    this.userDetails = data.userData;
    this.findNewApplication(this.userDetails.usr_id);
   }
-
+  openKuiri(x: any) {
+        this.navCtrl.push(QueryPage, x);
+        console.log(x);
+    }
 findNewApplication(id){
    this.authService.BpkspApplication(id,0)
             .then(data => {

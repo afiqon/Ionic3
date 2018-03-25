@@ -53,12 +53,7 @@ export class IndexPage {
      this.userDetails = data.userData;
      if(data.userData.type_id==1)
 {
-  // let alert = alertCtrl.create({
-  //       title: 'Lesen anda akan tamat',
-  //       subTitle: 'Sila Buat Pembaharuan Lesen',
-  //        buttons: ['OK']
-  //     });
-  //     alert.present();
+ this.findTgExpired(data.userData.usr_id);
 }
      if(data.userData.type_id==2)
       {
@@ -94,6 +89,24 @@ backToWelcome() {
     localStorage.clear();
     setTimeout(() => this.backToWelcome(), 1000);
   }
+  findTgExpired(id)
+  {
+ this.authService.findTgExpired(this.userDetails.usr_id).then(data => {
+      
+//do here what you want
+ if(data[0])
+ {
+   this.localNotifications.schedule({
+    id: 1,
+    title: 'Lesen TG anda akan tamat dalam tempoh 60 hari',
+    text: 'Sila Mohon Pembaharuan Lesen',
+    data: { mydata: 'Sila Mohon Pembaharuan Lesen' },
+    at: new Date(new Date().getTime() + 2 * 1000)
+  });
+  }
+    })
+
+ }
 
   findExpiredTobtab(id)
   {
@@ -142,6 +155,21 @@ backToWelcome() {
       }
 
     })
+    //notification
+    this.authService.BpkspExpired(this.userDetails.usr_id).then(data => {
+                console.log(data);
+          //do here what you want
+           if(data[0])
+           {
+             this.localNotifications.schedule({
+              id: 1,
+              title: 'Lesen BPKSP anda akan tamat dalam tempoh 60 hari',
+              text: 'Sila Mohon Pembaharuan Lesen',
+              data: { mydata: 'Sila Mohon Pembaharuan Lesen' },
+              at: new Date(new Date().getTime() + 2 * 1000)
+            });
+            }
+              })
   }
   findIlp(id){
     this.authService.findILP(id).then(data=>{
@@ -152,6 +180,21 @@ backToWelcome() {
       }
 
     })
+    //notification ILP 
+     this.authService.ILPExpired(this.userDetails.usr_id).then(data => {
+                console.log(data);
+          //do here what you want
+           if(data[0])
+           {  
+             this.localNotifications.schedule({
+              id: 1,
+              title: 'Lesen ILP anda akan tamat dalam tempoh 60 hari',
+              text: 'Sila Mohon Pembaharuan Lesen',
+              data: { mydata: 'Sila Mohon Pembaharuan Lesen' },
+              at: new Date(new Date().getTime() + 2 * 1000)
+            });
+            }
+              })
   }
   pemandu(){
     //if logged in and type_id is 1

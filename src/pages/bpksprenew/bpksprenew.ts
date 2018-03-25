@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
+import { QueryPage } from '../query/query';
 /**
  * Generated class for the BpksprenewPage page.
  *
@@ -24,6 +25,10 @@ public noRecords: boolean;
    this.userDetails = data.userData;
    this.findRenew(this.userDetails.usr_id);
   }
+   openKuiri(x: any) {
+        this.navCtrl.push(QueryPage, x);
+        console.log(x);
+    }
 findRenew(id){
    this.authService.BpkspRenew(id,0)
             .then(data => {

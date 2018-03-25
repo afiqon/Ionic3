@@ -44,7 +44,7 @@ export class AuthServiceProvider {
 //   });
 // }
   findAllTobtab(id){
-      return this.http.get(apiTest+'/tobtab_awam_carian?id='+id)
+      return this.http.get(apiUrl+'/tobtab_awam_carian?id='+id)
             .map(res => res.json())
             .toPromise();
   }
@@ -83,6 +83,18 @@ export class AuthServiceProvider {
             .map(res => res.json())
             .toPromise();
     }
+    findTgLesen(id){
+   return this.http.get(apiUrl+'/senarai_lesen_tg?id='+id)
+             .map(res => res.json())
+            .toPromise();
+  
+  }
+  findTgExpired(id){
+   return this.http.get(apiUrl+'/tg_expired?id='+id)
+             .map(res => res.json())
+            .toPromise();
+  
+  }
      findPermohonanbaru(id){
    return this.http.get(apiUrl+'/permohonan_lesen_baru_tg?id='+id)
              .map(res => res.json())
@@ -147,62 +159,74 @@ export class AuthServiceProvider {
   }
   //if pengguna syarikat ada BPKSP
   findBPSKP(id){
- return this.http.get(apiTest+'/spipBpksp?id='+id)
+ return this.http.get(apiUrl+'/spipBpksp?id='+id)
              .map(res => res.json())
             .toPromise();
   }
   //bpksp mohon lesen baru
   BpkspApplication(id,date){
- return this.http.get(apiTest+'/bpksp_lesen_baru?id='+id+'&date='+date)
+ return this.http.get(apiUrl+'/bpksp_lesen_baru?id='+id+'&date='+date)
              .map(res => res.json())
             .toPromise();
   }
   //bpksp pembahruan lesen
   BpkspRenew(id,date){
- return this.http.get(apiTest+'/bpksp_pembaharuan?id='+id+'&date='+date)
+ return this.http.get(apiUrl+'/bpksp_pembaharuan?id='+id+'&date='+date)
              .map(res => res.json())
             .toPromise();
   }
   //bpksp ubah syarat lesen
    BpkspChangeCondition(id,date){
- return this.http.get(apiTest+'/bpksp_ubahsyarat?id='+id+'&date='+date)
+ return this.http.get(apiUrl+'/bpksp_ubahsyarat?id='+id+'&date='+date)
              .map(res => res.json())
             .toPromise();
   }
+  BpkspExpired(id){
+   return this.http.get(apiUrl+'/bpksp_expired?id='+id)
+             .map(res => res.json())
+            .toPromise();
+  
+  }
   // if pengguna syarikat ad ILP
     findILP(id){
- return this.http.get(apiTest+'/spipILP?id='+id)
+ return this.http.get(apiUrl+'/spipILP?id='+id)
              .map(res => res.json())
             .toPromise();
   }
   //ILP lesen baru
   ILPApplication(id){
- return this.http.get(apiTest+'/ilp_permohonan_lesen_baru?id='+id)
+ return this.http.get(apiUrl+'/ilp_permohonan_lesen_baru?id='+id)
              .map(res => res.json())
             .toPromise();
   }
   //ILP pembaharuan
   ILPRenew(id){
- return this.http.get(apiTest+'/ilp_pembaharuan?id='+id)
+ return this.http.get(apiUrl+'/ilp_pembaharuan?id='+id)
              .map(res => res.json())
             .toPromise();
   }
   //ILP tukar status
    ILPChangestatus(id){
- return this.http.get(apiTest+'/ilp_tukarstatus?id='+id)
+ return this.http.get(apiUrl+'/ilp_tukarstatus?id='+id)
              .map(res => res.json())
             .toPromise();
   }
     //ILP tambah cawangan
    ILPAddbranch(id){
- return this.http.get(apiTest+'/ilp_branch?id='+id)
+ return this.http.get(apiUrl+'/ilp_branch?id='+id)
              .map(res => res.json())
             .toPromise();
   }
    ILPPermit(id){
- return this.http.get(apiTest+'/ilp_permit?id='+id)
+ return this.http.get(apiUrl+'/ilp_permit?id='+id)
              .map(res => res.json())
             .toPromise();
+  }
+  ILPExpired(id){
+   return this.http.get(apiUrl+'/ilp_expired?id='+id)
+             .map(res => res.json())
+            .toPromise();
+  
   }
   getUsers(id) {
   return new Promise(resolve => {

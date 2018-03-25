@@ -19,6 +19,7 @@ import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 export class SpipPage {
 userDetails :any;
 property:any;
+licenses:any;
   constructor(public navCtrl: NavController, public navParams: NavParams,public authService: AuthServiceProvider) {
   	const data = JSON.parse(localStorage.getItem("userData"));
      this.userDetails = data.userData;
@@ -26,7 +27,11 @@ property:any;
        this.authService.findPermohonanbaru(this.userDetails.usr_id).then(
             property => this.property = property
         );
-  	console.log(this.property);
+        this.authService.findTgLesen(this.userDetails.usr_id).then(
+            property => {this.licenses = property;
+              console.log(this.licenses);
+        });
+  	
   }
 openPropertyDetail(x: any) {
         this.navCtrl.push(TgnewlicensePage, this.userDetails);

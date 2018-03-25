@@ -25,10 +25,18 @@
         <p style="color: white;font-weight: lighter;"[innerHTML]="property.kuiri "></p>
 	</ion-card-content>
 </ion-card>
-<ion-card>
+<ion-card *ngIf="property.kuiryby;else other_content">
     <ion-card-content>
   		<h2 class="card-title" style="color: white;font-weight: strong;">Daripada:</h2>
      	<p style="color: white;font-weight: lighter;">{{property.kuiriby}}</p>
 	</ion-card-content>
 </ion-card>
+ <ng-template #other_content>
+ <ion-card >
+    <ion-card-content>
+      <h2 class="card-title" style="color: white;font-weight: strong;">Daripada:</h2>
+      <p style="color: white;font-weight: lighter;">{{property.kuiriname}}</p>
+  </ion-card-content>
+  </ion-card>
+ </ng-template>
 </ion-content>

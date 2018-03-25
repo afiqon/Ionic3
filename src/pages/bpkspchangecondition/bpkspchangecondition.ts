@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
+import { QueryPage } from '../query/query';
 /**
  * Generated class for the BpkspchangeconditionPage page.
  *
@@ -24,12 +25,15 @@ public noRecords: boolean;
    this.userDetails = data.userData;
    this.findChangeCondition(this.userDetails.usr_id);
   }
-
+ openKuiri(x: any) {
+        this.navCtrl.push(QueryPage, x);
+        console.log(x);
+    }
   findChangeCondition(id){
    this.authService.BpkspChangeCondition(id,0)
             .then(data => {
      this.dataFetched = data;
-     if (this.dataFetched) {
+     if (this.dataFetched[0].date) {
         this.property = this.dataFetched;
         // Data set length
         const dataLength = this.dataFetched.length;
