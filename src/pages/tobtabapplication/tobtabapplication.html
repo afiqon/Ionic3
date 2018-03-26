@@ -20,6 +20,14 @@
             <h2 class="card-title" style="color: white;font-weight: strong;">{{userDetails.usr_fullname}}</h2>
             <h2 class="card-title" style="color: white;font-weight: strong;text-align: center;">{{userDetails.usr_id}}</h2>
             <!-- <p style="color: white;font-weight: lighter;">{{propertyx.appl_date}}</p> -->
+            <div *ngFor="let tobtab of tobtabs">
+            
+                 <h2 class="card-title" style="color: white;font-weight: strong;text-align: center;">No Lesen:</h2>
+            
+            <p style="color: white;font-weight: lighter;text-align: center;">{{tobtab.tobtab_no_lesen}}</p>
+            <h2 class="card-title" style="color: white;font-weight: strong;text-align: center;">Lesen Tamat:</h2>
+            <p style="color: white;font-weight: lighter;text-align: center;">{{tobtab.tobtab_tkh_lesen_tamat}}</p>
+            </div>
 			        </ion-card-content>
         </ion-card>
           <ion-slides style="margin-top: -150px;" pager>

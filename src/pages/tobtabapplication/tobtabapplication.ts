@@ -17,6 +17,7 @@ import { TobtabkuiriPage } from '../tobtabkuiri/tobtabkuiri';
 export class TobtabapplicationPage {
 property: any;
 userDetails:any;
+tobtabs:any;
   constructor(public navCtrl: NavController, public navParams: NavParams,public authService: AuthServiceProvider) {
   	  const data = JSON.parse(localStorage.getItem("userData"));
    this.userDetails = data.userData;
@@ -29,8 +30,12 @@ userDetails:any;
         console.log('console log ionic',this.property);
       });
    // debugger;
-       console.log(this.property);
+     this.authService.findByIdTobtab(id).then(property => {
+        this.tobtabs = property;
+        console.log('console log tobttabs',this.tobtabs);
+      });
   }
+  //findByIdTobtab
     openKuiri(x: any) {
         this.navCtrl.push(TobtabkuiriPage, x);
         console.log(x);
