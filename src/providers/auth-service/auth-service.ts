@@ -3,7 +3,7 @@ import {Http, Headers} from '@angular/http';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
-let apiUrl = "http://132.148.150.216:1440";
+let apiUrl = "http://150.242.180.103:1440/";
 let apiTest='http://localhost:1440';
 @Injectable()
 export class AuthServiceProvider {
@@ -43,6 +43,12 @@ export class AuthServiceProvider {
 //     });
 //   });
 // }
+//hotel
+findHotelAll(){
+     return this.http.get(apiUrl+'/hotel')
+            .map(res => res.json())
+            .toPromise();
+}
   findAllTobtab(id){
       return this.http.get(apiUrl+'/tobtab_awam_carian?id='+id)
             .map(res => res.json())
@@ -177,7 +183,7 @@ export class AuthServiceProvider {
   }
   //bpksp ubah syarat lesen
    BpkspChangeCondition(id,date){
- return this.http.get(apiUrl+'/bpksp_ubahsyarat?id='+id+'&date='+date)
+ return this.http.get(apiTest+'/bpksp_ubahsyarat?id='+id+'&date='+date)
              .map(res => res.json())
             .toPromise();
   }
@@ -237,7 +243,7 @@ export class AuthServiceProvider {
     });
   });
 }
-
+//for login
   postData(credentials, type) {
     return new Promise((resolve, reject) => {
       let headers = new Headers({ 'Content-Type': 'application/json' });

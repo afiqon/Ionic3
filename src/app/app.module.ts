@@ -43,6 +43,10 @@ import { IlpchangestatusPage } from '../pages/ilpchangestatus/ilpchangestatus';
 import { IlppermitPage } from '../pages/ilppermit/ilppermit';
 import { IlppermitdetailPage } from '../pages/ilppermitdetail/ilppermitdetail';
 import { QueryPage } from '../pages/query/query';
+import { HotelPage } from '../pages/hotel/hotel';
+import { Hotel2Page } from '../pages/hotel2/hotel2';
+import { HotelapplicationPage } from '../pages/hotelapplication/hotelapplication';
+import { HotelclassificationPage } from '../pages/hotelclassification/hotelclassification';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 @NgModule({
   declarations: [
@@ -81,6 +85,9 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
     IlppermitPage,
     IlppermitdetailPage,
     QueryPage,
+    HotelPage,
+    Hotel2Page,
+    HotelclassificationPage,
     MapPage
   ],
   imports: [
@@ -125,6 +132,9 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
     IlppermitPage,
     IlppermitdetailPage,
     QueryPage,
+    HotelPage,
+    Hotel2Page,
+    HotelclassificationPage,
     MapPage
   ],
   providers: [

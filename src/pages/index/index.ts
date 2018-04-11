@@ -10,6 +10,7 @@ import { SpipPage } from '../spip/spip';
 import { SpiptobtabPage } from '../spiptobtab/spiptobtab';
 import { SpipbpkspPage } from '../spipbpksp/spipbpksp';
 import { SpipilpPage } from '../spipilp/spipilp';
+import { HotelPage } from '../hotel/hotel';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 /**
@@ -235,6 +236,10 @@ backToWelcome() {
     this.navCtrl.setRoot(IlpPage);
     }
 
+  }
+
+  hotel(){
+    this.navCtrl.setRoot(HotelPage);
   }
 
   login()
