@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map';;
   See https://angular.io/guide/dependency-injection for more info on providers
   and Angular DI.
 */
-let apiUrl = "http://150.242.180.103:1440/";
+let apiUrl = "http://132.148.150.216:1440";
 @Injectable()
 export class IlpProvider {
 

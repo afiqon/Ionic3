@@ -3,7 +3,7 @@ import {Http, Headers} from '@angular/http';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
-let apiUrl = "http://150.242.180.103:1440/";
+let apiUrl = "http://150.242.180.103:1440";
 let apiTest='http://localhost:1440';
 @Injectable()
 export class AuthServiceProvider {

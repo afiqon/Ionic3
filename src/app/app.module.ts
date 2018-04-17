@@ -45,6 +45,7 @@ import { IlppermitdetailPage } from '../pages/ilppermitdetail/ilppermitdetail';
 import { QueryPage } from '../pages/query/query';
 import { HotelPage } from '../pages/hotel/hotel';
 import { Hotel2Page } from '../pages/hotel2/hotel2';
+import { SpiphotelPage } from '../pages/spiphotel/spiphotel';
 import { HotelapplicationPage } from '../pages/hotelapplication/hotelapplication';
 import { HotelclassificationPage } from '../pages/hotelclassification/hotelclassification';
 import { LocalNotifications } from '@ionic-native/local-notifications';
@@ -85,8 +86,10 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
     IlppermitPage,
     IlppermitdetailPage,
     QueryPage,
+    SpiphotelPage,
     HotelPage,
     Hotel2Page,
+    HotelapplicationPage,
     HotelclassificationPage,
     MapPage
   ],
@@ -132,8 +135,10 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
     IlppermitPage,
     IlppermitdetailPage,
     QueryPage,
+    SpiphotelPage,
     HotelPage,
     Hotel2Page,
+    HotelapplicationPage,
     HotelclassificationPage,
     MapPage
   ],

@@ -6,13 +6,17 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>spiphotel</ion-title>
+  <ion-navbar color="facebook">
+    <ion-title>HOTEL</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding  class="bg">
+<ion-tabs color="facebook" tabsPlacement=bottom>
+  <ion-tab [root]="tab1Root" tabTitle="Permohonan Baru"> </ion-tab>
+  <ion-tab [root]="tab2Root" tabTitle="Pengkelasan"></ion-tab>
 
+</ion-tabs>
 </ion-content>

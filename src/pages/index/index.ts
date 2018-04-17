@@ -11,6 +11,7 @@ import { SpiptobtabPage } from '../spiptobtab/spiptobtab';
 import { SpipbpkspPage } from '../spipbpksp/spipbpksp';
 import { SpipilpPage } from '../spipilp/spipilp';
 import { HotelPage } from '../hotel/hotel';
+import { SpiphotelPage } from '../spiphotel/spiphotel';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 /**
@@ -33,6 +34,7 @@ export class IndexPage {
   public noRecords: boolean;
   public ModuleBpksp : any;
   public ModuleIlp : any
+   public ModuleHotel : any
   constructor(public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController,public authService: AuthServiceProvider,private plt: Platform, private localNotifications: LocalNotifications) {
     const data = JSON.parse(localStorage.getItem("userData"));
       this.plt.ready().then((readySource) => {
@@ -239,7 +241,13 @@ backToWelcome() {
   }
 
   hotel(){
+     if(this.userDetails.type_id==2)
+    {
+      this.navCtrl.push(SpiphotelPage);
+    }
+    else{
     this.navCtrl.setRoot(HotelPage);
+    }
   }
 
   login()

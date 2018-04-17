@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { HotelapplicationPage } from '../hotelapplication/hotelapplication';
+import { HotelclassificationPage } from '../hotelclassification/hotelclassification';
 /**
  * Generated class for the SpiphotelPage page.
  *
@@ -14,6 +15,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'spiphotel.html',
 })
 export class SpiphotelPage {
+tab1Root = HotelapplicationPage;
+tab2Root= HotelclassificationPage;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
