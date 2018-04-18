@@ -34,7 +34,7 @@ properties:any;
   this.authService.ILPApplication(id).then(
             data => {
             this.properties = data;
-          
+          console.log('hotel',this.properties);
         })
   }
   openKuiri(x: any) {
