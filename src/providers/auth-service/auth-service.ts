@@ -235,12 +235,12 @@ findHotelAll(){
   
   }
    HotelApplication(id){
- return this.http.get(apiTest+'/hotelapplication?id='+id)
+ return this.http.get(apiUrl+'/hotelapplication?id='+id)
              .map(res => res.json())
             .toPromise();
   }
    HotelClassification(id){
- return this.http.get(apiTest+'/hotelclassification?id='+id)
+ return this.http.get(apiUrl+'/hotelclassification?id='+id)
              .map(res => res.json())
             .toPromise();
   }
