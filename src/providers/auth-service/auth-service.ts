@@ -239,6 +239,11 @@ findHotelAll(){
              .map(res => res.json())
             .toPromise();
   }
+   HotelClassification(id){
+ return this.http.get(apiTest+'/hotelclassification?id='+id)
+             .map(res => res.json())
+            .toPromise();
+  }
   getUsers(id) {
   return new Promise(resolve => {
     this.http.get(apiUrl+'/permohonan_kuiri?id='+id).subscribe(data => {

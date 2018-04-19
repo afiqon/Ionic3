@@ -1,5 +1,5 @@
 <!--
-  Generated template for the IlpapplicationPage page.
+  Generated template for the HotelapplicationPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -15,34 +15,36 @@
 <ion-navbar color="facebook">
     <ion-title>Pengkelasan</ion-title>
   </ion-navbar>
-<ion-card>
+  <ion-card>
          <ion-card-content>
-            <h2 class="card-title" style="color: white;font-weight: strong;text-align: center;">LexSpa @ Lexis Suites Penang</h2>
-            <h2 class="card-title" style="color: white;font-weight: strong;text-align: center;">718044V</h2>
-        
-			        </ion-card-content>
+            <h2 class="card-title" style="color: white;font-weight: strong;text-align: center;">{{userDetails.usr_fullname}}</h2>
+            <h2 class="card-title" style="color: white;font-weight: strong;text-align: center;">{{userDetails.usr_id}}</h2>
+              </ion-card-content>
 </ion-card>
-       <ion-slides style="margin-top: -150px;" pager>
-
-  <ion-slide>
+<ion-slides style="margin-top: -150px;" pager>
+  <div  *ngFor="let propertyx of properties">
+<ion-slide>
     <ion-card>
          <ion-card-content>
             <h2 class="card-title" style="color: white;font-weight: strong;">Tarikh Permohonan:</h2>
             
-            <p style="color: white;font-weight: lighter;">12-01-2016</p>
+            <p style="color: white;font-weight: lighter;">{{propertyx.classification_date}}</p>
               </ion-card-content>
         </ion-card>
      <ion-card>
-         <ion-card-content >
+         <ion-card-content>
             <h2 class="card-title" style="color: white;font-weight: strong;">Status Permohonan:</h2>
-            <p style="color: white;font-weight: lighter;">Kelulusan</p>
+            <p style="color: white;font-weight: lighter;">{{propertyx.classification_status_name}}</p>
 
         </ion-card-content>
         </ion-card>
-  <!--         <div *ngIf="propertyx.ilp_application_status_name== '39'" >
-              <button ion-button (click)="openKuiri(propertyx)" >Kuiri</button> 
-        </div> -->
+
+          <!--   <div *ngIf="propertyx.tobtab_application_status_id== '43' || propertyx.tobtab_application_status_id == '44'|| propertyx.tobtab_application_status_id == '47'">
+        <button ion-button (click)="openKuiri(propertyx)" >Kuiri</button>
+        </div -->
+     
         </ion-slide>
-   
-        </ion-slides>
+      
+        </div>
+  </ion-slides>
 </ion-content>
