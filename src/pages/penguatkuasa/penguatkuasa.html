@@ -1,0 +1,34 @@
+<!--
+  Generated template for the PenguatkuasaPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="facebook">
+    <ion-title>Pengkelasan Hotel</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="bg">
+<button ion-button  (click)="hotel()">Hotel</button>
+<!-- <button ion-button>Pengekelasan Hotel</button> -->
+<button ion-button (click)="stat()" >Statistik</button>
+     <ion-searchbar [(ngModel)]="searchKey" (ionInput)="onInput($event)"
+                       (ionCancel)="onCancel($event)" placeholder="Carian"></ion-searchbar>
+<ion-row >
+    <ion-card *ngFor="let property of properties">
+        <!-- <img src="{{property[0].pers_tg_id}}"/> -->
+        <ion-card-content  >
+            <h2 class="card-title" style="color: white;font-weight: lighter;">{{property.premise_name}}</h2>
+              <h2 class="card-title" style="color: white;font-weight: lighter;">Muat Turun Dokumen</h2>
+               <h2 class="card-title" style="color: white;font-weight: lighter;">{{property.classification_doc}}</h2>
+              <button ion-button>Download</button>
+        </ion-card-content>
+    </ion-card>
+  </ion-row>
+
+</ion-content>

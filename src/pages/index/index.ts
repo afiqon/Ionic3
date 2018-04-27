@@ -13,6 +13,8 @@ import { SpipilpPage } from '../spipilp/spipilp';
 import { HotelPage } from '../hotel/hotel';
 import { SpiphotelPage } from '../spiphotel/spiphotel';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
+import { PenguatkuasaPage } from '../penguatkuasa/penguatkuasa';
+import { SpaPage } from '../spa/spa';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 /**
  * Generated class for the IndexPage page.
@@ -245,11 +247,17 @@ backToWelcome() {
     {
       this.navCtrl.push(SpiphotelPage);
     }
+      else if(this.userDetails.type_id==10){
+         this.navCtrl.push(PenguatkuasaPage);
+      }
     else{
     this.navCtrl.setRoot(HotelPage);
     }
   }
-
+  spa()
+  {    
+    this.navCtrl.push(SpaPage);
+  }
   login()
   {
     this.navCtrl.setRoot(HomePage);

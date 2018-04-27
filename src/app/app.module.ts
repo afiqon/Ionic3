@@ -48,7 +48,12 @@ import { Hotel2Page } from '../pages/hotel2/hotel2';
 import { SpiphotelPage } from '../pages/spiphotel/spiphotel';
 import { HotelapplicationPage } from '../pages/hotelapplication/hotelapplication';
 import { HotelclassificationPage } from '../pages/hotelclassification/hotelclassification';
+import { PenguatkuasaPage } from '../pages/penguatkuasa/penguatkuasa';
+import { HotelcheckPage } from '../pages/hotelcheck/hotelcheck';
+import { StatisticPage } from '../pages/statistic/statistic';
+import { SpaPage } from '../pages/spa/spa';
 import { LocalNotifications } from '@ionic-native/local-notifications';
+import { ChartsModule } from 'ng2-charts';
 @NgModule({
   declarations: [
     MyApp,
@@ -90,12 +95,17 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
     HotelPage,
     Hotel2Page,
     HotelapplicationPage,
+    HotelcheckPage,
     HotelclassificationPage,
+    PenguatkuasaPage,
+    StatisticPage,
+    SpaPage,
     MapPage
   ],
   imports: [
     BrowserModule,
     HttpModule,
+    ChartsModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -140,6 +150,10 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
     Hotel2Page,
     HotelapplicationPage,
     HotelclassificationPage,
+    PenguatkuasaPage,
+    HotelcheckPage,
+    StatisticPage,
+    SpaPage,
     MapPage
   ],
   providers: [

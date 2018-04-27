@@ -244,6 +244,21 @@ findHotelAll(){
              .map(res => res.json())
             .toPromise();
   }
+    Hotelcheck(){
+ return this.http.get(apiUrl+'/hotelcheck')
+             .map(res => res.json())
+            .toPromise();
+  }
+   Spa(id){
+ return this.http.get(apiTest+'/spa')
+             .map(res => res.json())
+            .toPromise();
+  }
+ findHotel2(key:string) {
+        return this.http.get(apiUrl+"/hotelsearch?key="+key)
+            .map(res => res.json())
+            .toPromise();
+    }
   getUsers(id) {
   return new Promise(resolve => {
     this.http.get(apiUrl+'/permohonan_kuiri?id='+id).subscribe(data => {
