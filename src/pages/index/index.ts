@@ -16,6 +16,7 @@ import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { PenguatkuasaPage } from '../penguatkuasa/penguatkuasa';
 import { SpaPage } from '../spa/spa';
 import { LocalNotifications } from '@ionic-native/local-notifications';
+import { Penguatkuasa2Page } from '../penguatkuasa2/penguatkuasa2';
 /**
  * Generated class for the IndexPage page.
  *
@@ -257,6 +258,10 @@ backToWelcome() {
   spa()
   {    
     this.navCtrl.push(SpaPage);
+  }
+    kompaun()
+  {    
+    this.navCtrl.push(Penguatkuasa2Page);
   }
   login()
   {

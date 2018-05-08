@@ -1,4 +1,4 @@
-page-penguatkuasa {
+page-spa2 {
 .bg{
 		background-image: url('../assets/bg4.png');
 		background-size: cover;
@@ -6,16 +6,17 @@ page-penguatkuasa {
 	.item-md{
 	
 	background-color: rgba(0, 0, 0, 0);
-	background-image: url('../assets/icon/rectangle.png');
+	background-image: url('../assets/icon/rectangle.svg');
 	background-size: cover;
 	color:white;
 	font-weight: lighter;
-	height:44px;
+	
 	}
-		.card-md{
+	.card-md{
 	background-color: rgba(0, 0, 0, 0);
-    background-image: url('../assets/icon/rectangle.png');
+    background-image: url('../assets/icon/rectangle.svg');
     background-size: cover;
     color:white;
+    margin:5px;
 	}
 }

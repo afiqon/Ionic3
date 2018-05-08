@@ -249,11 +249,21 @@ findHotelAll(){
              .map(res => res.json())
             .toPromise();
   }
-   Spa(id){
- return this.http.get(apiTest+'/spa')
+   Spa(){
+ return this.http.get(apiUrl+'/spa')
              .map(res => res.json())
             .toPromise();
   }
+   compound(){
+ return this.http.get(apiUrl+'/penguatkuasa')
+             .map(res => res.json())
+            .toPromise();
+  }
+   findCompound(key:string) {
+        return this.http.get(apiUrl+"/penguatkuasa_cari?key="+key)
+            .map(res => res.json())
+            .toPromise();
+    }
  findHotel2(key:string) {
         return this.http.get(apiUrl+"/hotelsearch?key="+key)
             .map(res => res.json())

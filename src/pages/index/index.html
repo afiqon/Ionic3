@@ -154,13 +154,13 @@
                      <!-- <div class="box"><img alt="logo"    src="./assets/img/hotel.png"> </div> -->
                 </ion-col>
                 <ion-col text-center class="apcs">
-                   <!--  <div class="box"><img alt="logo"    src="./assets/img/hotel.png"> </div> -->
+                   <button ion-button *ngIf="userDetails.type_id==10" (click)="kompaun()">Kompaun</button>  
                 </ion-col>
                 <ion-col text-center class="apcs">
                    <div (click)="hotel()"><img src="./assets/fon/hotel.png"> </div>
                 </ion-col>
             </ion-row>
-            <ion-row>
+            <ion-row *ngIf="userDetails.type_id!==10">
                 <ion-col >
                     <!-- <div class="box"><img alt="logo"    src="./assets/img/hotel.png"> </div> -->
                 </ion-col>
@@ -171,7 +171,7 @@
                     <div (click)="pemandu()"><img src="./assets/fon/pemandu.png"> </div>
                 </ion-col>
             </ion-row>
-            <ion-row>
+            <ion-row *ngIf="userDetails.type_id!==10">
                 <ion-col>
                     <!-- <div class="box"><img alt="logo"    src="./assets/img/hotel.png"> </div> -->
                 </ion-col>
@@ -182,7 +182,7 @@
                     <div (click)="spa()"><img src="./assets/fon/spa.png"> </div>
                 </ion-col>
             </ion-row> 
-            <ion-row>
+            <ion-row *ngIf="userDetails.type_id!==10">
                 <ion-col>
                     <div (click)="ilp()"><img src="./assets/fon/ilp.png"> </div>
                 </ion-col>
@@ -192,7 +192,7 @@
                 <ion-col>
                     <div (click)="aduan()"><img src="./assets/fon/ADUAN.png"> </div>
                 </ion-col>
-            </ion-row>   
+            </ion-row> 
         </ion-grid>
  </ng-template>
 </ion-content>

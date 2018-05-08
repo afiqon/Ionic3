@@ -52,6 +52,9 @@ import { PenguatkuasaPage } from '../pages/penguatkuasa/penguatkuasa';
 import { HotelcheckPage } from '../pages/hotelcheck/hotelcheck';
 import { StatisticPage } from '../pages/statistic/statistic';
 import { SpaPage } from '../pages/spa/spa';
+import { Spa2Page } from '../pages/spa2/spa2';
+import { Penguatkuasa2Page } from '../pages/penguatkuasa2/penguatkuasa2';
+import { Penguatkuasa3Page } from '../pages/penguatkuasa3/penguatkuasa3';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { ChartsModule } from 'ng2-charts';
 @NgModule({
@@ -100,6 +103,9 @@ import { ChartsModule } from 'ng2-charts';
     PenguatkuasaPage,
     StatisticPage,
     SpaPage,
+    Spa2Page,
+    Penguatkuasa2Page,
+    Penguatkuasa3Page,
     MapPage
   ],
   imports: [
@@ -154,6 +160,9 @@ import { ChartsModule } from 'ng2-charts';
     HotelcheckPage,
     StatisticPage,
     SpaPage,
+    Spa2Page,
+    Penguatkuasa2Page,
+    Penguatkuasa3Page,
     MapPage
   ],
   providers: [

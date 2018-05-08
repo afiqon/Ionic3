@@ -1,0 +1,23 @@
+ <ion-header>
+    <ion-navbar color="facebook">
+        <ion-title>KOMPAUN</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="bg">
+    <ion-card >
+        <!-- <img src="{{property[0].pers_tg_id}}"/> -->
+        <ion-card-content>
+            <h2 class="card-title" style="color: white;font-weight: strong;">{{property.usr_name}}</h2>
+            <!-- <button ion-button *ngIf="users?.length>0"  (click)="openMap(users[0],property[0].appl_company_name)">Show Location</button> -->
+                   <h2 class="card-title" style="color: white;font-weight: strong;">Tarikh Kompaun:</h2>
+            <p style="color: white;font-weight: lighter;">{{property.compound_date}}</p>
+            <h2 class="card-title" style="color: white;font-weight: strong;">Jenis Kesalahan:</h2>
+            <p style="color: white;font-weight: lighter;">{{property.offence_type}}</p>
+
+
+      
+        </ion-card-content>
+        </ion-card>
+</ion-content>

@@ -1,0 +1,25 @@
+ <ion-header>
+    <ion-navbar color="facebook">
+        <ion-title>SPA FMC</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="bg">
+    <ion-card >
+        <!-- <img src="{{property[0].pers_tg_id}}"/> -->
+        <ion-card-content>
+            <h2 class="card-title" style="color: white;font-weight: strong;">{{property.spa_fmc_name}}</h2>
+            <p style="color: white;font-weight: lighter;">{{property.spa_fmc_address}}</p>
+         
+            <!-- <button ion-button *ngIf="users?.length>0"  (click)="openMap(users[0],property[0].appl_company_name)">Show Location</button> -->
+            <div *ngFor="let user of users; let i = index">
+          <button ion-button *ngIf="user.geometry.location.lat==4.210484;else other_content"   (click)="openMap(name[0],property.spa_fmc_address)">Show Location</button>
+            <ng-template #other_content><button *ngIf="i<'1'" ion-button    (click)="openMap(user,property.spa_fmc_address)">Show Location</button></ng-template>
+            </div>
+            
+            
+
+        </ion-card-content>
+        </ion-card>
+</ion-content>

@@ -1,5 +1,5 @@
 <!--
-  Generated template for the HotelPage page.
+  Generated template for the Penguatkuasa2Page page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -8,9 +8,6 @@
 
   <ion-navbar color="facebook">
         <ion-title><div class = "row">
-   <div class = "col col-50">     <ion-title  (click)="goHome()" >
-<img alt="logo"    src="./assets/icon/home.png" > 
-</ion-title></div>
    <div class = "col"></div>
      <button ion-button menuToggle end>
             
@@ -41,23 +38,19 @@
 
 <ion-content padding class="bg">
     <ion-card-header>
-     <img alt="logo"    src="./assets/icon/hotel.png"> <ion-title text-center style="margin-top: -30px;"><a style="color: white;text-align: center;font-weight: lighter;">SPA/FMC</a></ion-title>
+     <img alt="logo"    src="./assets/icon/hotel.png"> <ion-title text-center style="margin-top: -30px;"><a style="color: white;text-align: center;font-weight: lighter;">KOMPAUN</a></ion-title>
      
     </ion-card-header>
-       <ion-searchbar  placeholder="Carian"></ion-searchbar>
+       <ion-searchbar [(ngModel)]="searchKey" (ionInput)="onInput($event)"
+                       (ionCancel)="onCancel($event)" placeholder="Carian"></ion-searchbar>
          <ion-row *ngFor="let property of properties">
     <ion-card>
         <!-- <img src="{{property[0].pers_tg_id}}"/> -->
         <ion-card-content (click)="openPropertyDetail(property)" >
-            <h2 class="card-title" style="color: white;font-weight: lighter;">{{property.spa_fmc_name}}</h2>
-            
-              	<ion-icon name="star" *ngIf="property.spa_fmc_rating > 0"></ion-icon>
-				<ion-icon name="star" *ngIf="property.spa_fmc_rating > 1"></ion-icon>
-				<ion-icon name="star" *ngIf="property.spa_fmc_rating > 2"></ion-icon>
-				<ion-icon name="star" *ngIf="property.spa_fmc_rating > 3"></ion-icon>
-				<ion-icon name="star" *ngIf="property.spa_fmc_rating > 4"></ion-icon>
-				
+            <h2 class="card-title" style="color: white;font-weight: lighter;">{{property.usr_name}}</h2>
+		
         </ion-card-content>
     </ion-card>
   </ion-row>
 </ion-content>
+
